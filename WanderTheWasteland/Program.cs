@@ -23,7 +23,7 @@ namespace WanderTheWasteland
             while (gameOver == false)
             {
                 // draws
-                map.Draw(); // having issues displaying player over map 
+                map.Draw();
                 player1.Draw();
                 enemy1.Draw();
 
