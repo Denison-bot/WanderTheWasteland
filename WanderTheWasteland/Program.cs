@@ -29,8 +29,8 @@ namespace WanderTheWasteland
 
                 // updates
                 map.Update();
-                enemy1.Update();
                 player1.Update(ref gameOver);
+                enemy1.Update();
             }            
         }
     }

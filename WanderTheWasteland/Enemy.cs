@@ -13,8 +13,8 @@ namespace WanderTheWasteland
         static int y;
         public void EnemyInit()
         {
-            x = 20;
-            y = 20;
+            x = 25;
+            y = 12;
         }
         public void Update()
         {

@@ -12,10 +12,16 @@ namespace WanderTheWasteland
         static int y;
         static char input;
 
+        // map size
+        static int northWall;
+        static int eastWall;
+        static int southWall;
+        static int westWall;
+
         public void PlayerInit()
         {
-            x = 5;
-            y = 5;
+            x = 2;
+            y = 2;
         }
 
         public void Draw()
@@ -24,27 +30,49 @@ namespace WanderTheWasteland
             Console.SetCursorPosition(x, y);
             Console.WriteLine("@");
         }
-
+        
         public void Update(ref bool gameOver)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
 
+            northWall = 0;
+            eastWall = 39;
+            southWall = 15;
+            westWall = 0;
+
+
             if (input == 'w')
             {
                 y--;
+                if (y <= northWall)
+                {
+                    y++;
+                }
             }
             else if (input == 's')
             {
                 y++;
+                if (y >= southWall)
+                {
+                    y--;
+                }
             }
             else if (input == 'a')
             {
                 x--;
+                if (x <= westWall)
+                {
+                    x++;
+                }
             }
             else if (input == 'd')
             {
                 x++;
+                if (x >= eastWall)
+                {
+                    x--;
+                }
             }
             else if (input == 'p')
             {
