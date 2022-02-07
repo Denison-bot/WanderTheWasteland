@@ -41,7 +41,7 @@ namespace WanderTheWasteland
             southWall = 15;
             westWall = 0;
 
-
+            if ()
             if (input == 'w')
             {
                 y--;
