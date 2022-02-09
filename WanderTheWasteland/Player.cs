@@ -8,9 +8,14 @@ namespace WanderTheWasteland
 {
     class Player
     {
+        static char input;
         static int x;
         static int y;
-        static char input;
+        static int intendedPosX;
+        static int intendedPosY;
+        static int previousPosX;
+        static int previousPosY;
+
 
         // map size
         static int northWall;
@@ -27,6 +32,8 @@ namespace WanderTheWasteland
         public void Draw()
         {
             //Console.Clear();
+            intendedPosX = x;
+            intendedPosY = y;
             Console.SetCursorPosition(x, y);
             Console.WriteLine("@");
         }
@@ -40,38 +47,39 @@ namespace WanderTheWasteland
             eastWall = 39;
             southWall = 15;
             westWall = 0;
+            previousPosX = x;
+            previousPosY = y;
 
-            if ()
             if (input == 'w')
             {
-                y--;
+                intendedPosY--;
                 if (y <= northWall)
                 {
-                    y++;
+                    intendedPosY++;
                 }
             }
             else if (input == 's')
             {
-                y++;
+                intendedPosY++;
                 if (y >= southWall)
                 {
-                    y--;
+                    intendedPosY--;
                 }
             }
             else if (input == 'a')
             {
-                x--;
+                intendedPosX--;
                 if (x <= westWall)
                 {
-                    x++;
+                    intendedPosX++;
                 }
             }
             else if (input == 'd')
             {
-                x++;
+                intendedPosX++;
                 if (x >= eastWall)
                 {
-                    x--;
+                    intendedPosX--;
                 }
             }
             else if (input == 'p')

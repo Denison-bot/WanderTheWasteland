@@ -10,7 +10,9 @@ namespace WanderTheWasteland
     {
         static int rows;
         static int cols;
-        static char[,] map = new char[, ]
+        static bool collision = false;
+
+        static char[,] map = new char[,]
         {
             {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '|', '.', '.', '.', '.', '.', '.', '.', '.', '|', '.', '.', '.', '.', '.', '|', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
             {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '|', '.', '.', '.', '.', '.', '.', '.', '.', '|', '.', '.', '.', '.', '.', '|', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
@@ -52,6 +54,15 @@ namespace WanderTheWasteland
             Console.WriteLine();
             //Console.ReadKey(true);
         }
+
+        //static void CollisionCheck()
+        //{
+        //    if (map[] == '|' || map[] == '-')
+        //    {
+
+        //    }
+        //}
+
         public void Update()
         {
 
