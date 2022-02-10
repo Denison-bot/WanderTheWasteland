@@ -9,15 +9,12 @@ namespace WanderTheWasteland
     class Player : GameCharacter
     {
         static char input;
-        //public int currentPosX;
-        //public int currentPosY;
-        //public int intendedPosX;
-        //public int intendedPosY;
 
         public void PlayerInit()
         {
             intendedPosX = 2;
             intendedPosY = 2;
+            health = 5;
         }
 
         public void Draw()

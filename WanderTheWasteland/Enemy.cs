@@ -9,11 +9,6 @@ namespace WanderTheWasteland
     
     class Enemy : GameCharacter
     {
-        //public int currentPosX;
-        //public int currentPosY;
-        //public int intendedPosX;
-        //public int intendedPosY;
-
         private const int up = 1;
         private const int down = 2;
         private const int left = 3;
@@ -23,6 +18,7 @@ namespace WanderTheWasteland
         {
             intendedPosX = 25;
             intendedPosY = 12;
+            health = 3;
         }
         public void Draw()
         {

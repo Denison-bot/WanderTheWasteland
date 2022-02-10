@@ -22,8 +22,9 @@ namespace WanderTheWasteland
 
             while (gameOver == false)
             {
-                // draws
                 Console.CursorVisible = false;
+
+                // draws
                 map.Draw();
                 player1.Draw();
                 enemy1.Draw();
