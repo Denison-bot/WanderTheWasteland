@@ -9,51 +9,35 @@ namespace WanderTheWasteland
     class Player
     {
         static char input;
-        static int x;
-        static int y;
-        static int intendedPosX;
-        static int intendedPosY;
-        static int previousPosX;
-        static int previousPosY;
-
-
-        // map size
-        static int northWall;
-        static int eastWall;
-        static int southWall;
-        static int westWall;
+        public int currentPosX;
+        public int currentPosY;
+        public int intendedPosX;
+        public int intendedPosY;
 
         public void PlayerInit()
         {
-            x = 2;
-            y = 2;
+            intendedPosX = 2;
+            intendedPosY = 2;
         }
 
         public void Draw()
         {
             //Console.Clear();
-            intendedPosX = x;
-            intendedPosY = y;
-            Console.SetCursorPosition(x, y);
+            currentPosX = intendedPosX;
+            currentPosY = intendedPosY;
+            Console.SetCursorPosition(currentPosX, currentPosY);
             Console.WriteLine("@");
         }
         
-        public void Update(ref bool gameOver)
+        public void Update(ref bool gameOver, Map map)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
 
-            northWall = 0;
-            eastWall = 39;
-            southWall = 15;
-            westWall = 0;
-            previousPosX = x;
-            previousPosY = y;
-
             if (input == 'w')
             {
                 intendedPosY--;
-                if (y <= northWall)
+                if (map.IsWall(intendedPosX, intendedPosY) == true)
                 {
                     intendedPosY++;
                 }
@@ -61,7 +45,7 @@ namespace WanderTheWasteland
             else if (input == 's')
             {
                 intendedPosY++;
-                if (y >= southWall)
+                if (map.IsWall(intendedPosX, intendedPosY) == true)
                 {
                     intendedPosY--;
                 }
@@ -69,7 +53,7 @@ namespace WanderTheWasteland
             else if (input == 'a')
             {
                 intendedPosX--;
-                if (x <= westWall)
+                if (map.IsWall(intendedPosX, intendedPosY) == true)
                 {
                     intendedPosX++;
                 }
@@ -77,7 +61,7 @@ namespace WanderTheWasteland
             else if (input == 'd')
             {
                 intendedPosX++;
-                if (x >= eastWall)
+                if (map.IsWall(intendedPosX, intendedPosY) == true)
                 {
                     intendedPosX--;
                 }

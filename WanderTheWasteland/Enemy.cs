@@ -9,21 +9,66 @@ namespace WanderTheWasteland
     
     class Enemy
     {
-        static int x;
-        static int y;
+        public int currentPosX;
+        public int currentPosY;
+        public int intendedPosX;
+        public int intendedPosY;
+
+        private const int up = 1;
+        private const int down = 2;
+        private const int left = 3;
+        private const int right = 4;
+
         public void EnemyInit()
         {
-            x = 25;
-            y = 12;
-        }
-        public void Update()
-        {
-
+            intendedPosX = 25;
+            intendedPosY = 12;
         }
         public void Draw()
         {
-            Console.SetCursorPosition(x, y);
+            currentPosX = intendedPosX;
+            currentPosY = intendedPosY;
+
+            Console.SetCursorPosition(currentPosX, currentPosY);
             Console.WriteLine("E");
+        }
+        public void Update(Map map)
+        {
+            Random rnd = new Random();
+            int nextMove = rnd.Next(1, 5);
+
+            if (nextMove == up)
+            {
+                intendedPosY--;
+                if (map.IsWall(intendedPosX, intendedPosY) == true)
+                {
+                    intendedPosY++;
+                }
+            }
+            else if (nextMove == down)
+            {
+                intendedPosY++;
+                if (map.IsWall(intendedPosX, intendedPosY) == true)
+                {
+                    intendedPosY--;
+                }
+            }
+            else if (nextMove == left)
+            {
+                intendedPosX--;
+                if (map.IsWall(intendedPosX, intendedPosY) == true)
+                {
+                    intendedPosX++;
+                }
+            }
+            else if (nextMove == right)
+            {
+                intendedPosX++;
+                if (map.IsWall(intendedPosX, intendedPosY) == true)
+                {
+                    intendedPosX--;
+                }
+            }
         }
     }
 }
