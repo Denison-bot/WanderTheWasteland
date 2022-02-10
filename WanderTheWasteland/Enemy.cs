@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace WanderTheWasteland
 {
     
-    class Enemy
+    class Enemy : GameCharacter
     {
-        public int currentPosX;
-        public int currentPosY;
-        public int intendedPosX;
-        public int intendedPosY;
+        //public int currentPosX;
+        //public int currentPosY;
+        //public int intendedPosX;
+        //public int intendedPosY;
 
         private const int up = 1;
         private const int down = 2;

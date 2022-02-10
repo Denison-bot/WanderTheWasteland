@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WanderTheWasteland
+namespace WanderTheWasteland 
 {
-    class Player
+    class Player : GameCharacter
     {
         static char input;
-        public int currentPosX;
-        public int currentPosY;
-        public int intendedPosX;
-        public int intendedPosY;
+        //public int currentPosX;
+        //public int currentPosY;
+        //public int intendedPosX;
+        //public int intendedPosY;
 
         public void PlayerInit()
         {
