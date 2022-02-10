@@ -18,22 +18,26 @@ namespace WanderTheWasteland
 
         public bool Attacking(Player player, Enemy enemy)
         {
-            if (player.intendedPosX == enemy.currentPosX)
+            if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
             {
                 //intendedPosX = currentPosX;                
-                if (player.intendedPosY == enemy.currentPosY)
-                {
-                    //intendedPosY = currentPosY;
-                    return true;
-                }
                 return true;
             }
             return false;
         }
 
-        public void TakeDamage()
+        public void PrintCorpse()
         {
-            health = health - attack;
+            Console.SetCursorPosition(currentPosX, currentPosY);
+            Console.Write("X");
+            
+        }
+
+        public void TakeDamage(Enemy enemy, Player player)
+        {
+            enemy.health = enemy.health - player.attack;            
+            //Console.SetCursorPosition(50, 20);
+            //Console.WriteLine(enemy.health);
         }
     }
 }

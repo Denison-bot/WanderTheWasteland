@@ -23,6 +23,7 @@ namespace WanderTheWasteland
             while (gameOver == false)
             {
                 Console.CursorVisible = false;
+                
 
                 // draws
                 map.Draw();
@@ -31,8 +32,8 @@ namespace WanderTheWasteland
 
                 // updates
                 map.Update();
-                player1.Update(ref gameOver, map, player1);
-                enemy1.Update(map );
+                player1.Update(ref gameOver, map, player1, enemy1);
+                enemy1.Update(map, enemy1, player1);
             }            
         }
     }

@@ -15,6 +15,7 @@ namespace WanderTheWasteland
             intendedPosX = 2;
             intendedPosY = 2;
             health = 5;
+            attack = 1;
         }
 
         public void Draw()
@@ -26,52 +27,70 @@ namespace WanderTheWasteland
             Console.Write("@");
         }
         
-        public void Update(ref bool gameOver, Map map, GameCharacter gameCharacter, Player player)
+        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
 
-            if (input == 'w')
+            if (health > 0)
             {
-                intendedPosY--;
-                if (map.IsWall(intendedPosX, intendedPosY) == true)
-                {
-                    intendedPosY++;
-                }
-                if (gameCharacter.Attacking(player.intendedPosX, player.intendedPosY) == true)
-                {
-                    intendedPosY++;
-                }
-            }
-            else if (input == 's')
-            {
-                intendedPosY++;
-                if (map.IsWall(intendedPosX, intendedPosY) == true)
+                if (input == 'w')
                 {
                     intendedPosY--;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosY++;
+                    }
+                    if (player.Attacking(player, enemy) == true)
+                    {
+                        intendedPosY++;
+                        enemy.TakeDamage(enemy, player);
+                    }
                 }
-            }
-            else if (input == 'a')
-            {
-                intendedPosX--;
-                if (map.IsWall(intendedPosX, intendedPosY) == true)
+                else if (input == 's')
                 {
-                    intendedPosX++;
+                    intendedPosY++;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosY--;
+                    }
+                    if (player.Attacking(player, enemy) == true)
+                    {
+                        intendedPosY--;
+                        enemy.TakeDamage(enemy, player);
+                    }
                 }
-            }
-            else if (input == 'd')
-            {
-                intendedPosX++;
-                if (map.IsWall(intendedPosX, intendedPosY) == true)
+                else if (input == 'a')
                 {
                     intendedPosX--;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosX++;
+                    }
+                    if (player.Attacking(player, enemy) == true)
+                    {
+                        intendedPosX++;
+                        enemy.TakeDamage(enemy, player);
+                    }
                 }
-            }
-            else if (input == 'p')
-            {
-                gameOver = true;
-            }
-            
+                else if (input == 'd')
+                {
+                    intendedPosX++;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosX--;
+                    }
+                    if (player.Attacking(player, enemy) == true)
+                    {
+                        intendedPosX--;
+                        enemy.TakeDamage(enemy, player);
+                    }
+                }
+                else if (input == 'p')
+                {
+                    gameOver = true;
+                }
+            }         
         }
 
         public void QuitCheck(ref bool gameOver)
