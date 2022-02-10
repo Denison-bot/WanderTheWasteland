@@ -26,7 +26,7 @@ namespace WanderTheWasteland
             Console.Write("@");
         }
         
-        public void Update(ref bool gameOver, Map map)
+        public void Update(ref bool gameOver, Map map, GameCharacter gameCharacter, Player player)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
@@ -35,6 +35,10 @@ namespace WanderTheWasteland
             {
                 intendedPosY--;
                 if (map.IsWall(intendedPosX, intendedPosY) == true)
+                {
+                    intendedPosY++;
+                }
+                if (gameCharacter.Attacking(player.intendedPosX, player.intendedPosY) == true)
                 {
                     intendedPosY++;
                 }
@@ -67,6 +71,7 @@ namespace WanderTheWasteland
             {
                 gameOver = true;
             }
+            
         }
 
         public void QuitCheck(ref bool gameOver)
