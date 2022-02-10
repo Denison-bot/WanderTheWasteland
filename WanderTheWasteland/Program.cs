@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WanderTheWasteland
 {
-
+    
     class Program
     {
         static Player player1 = new Player();
@@ -23,6 +23,7 @@ namespace WanderTheWasteland
             while (gameOver == false)
             {
                 // draws
+                Console.CursorVisible = false;
                 map.Draw();
                 player1.Draw();
                 enemy1.Draw();

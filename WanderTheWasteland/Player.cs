@@ -26,7 +26,7 @@ namespace WanderTheWasteland
             currentPosX = intendedPosX;
             currentPosY = intendedPosY;
             Console.SetCursorPosition(currentPosX, currentPosY);
-            Console.WriteLine("@");
+            Console.Write("@");
         }
         
         public void Update(ref bool gameOver, Map map)
