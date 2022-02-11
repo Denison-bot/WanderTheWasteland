@@ -38,7 +38,7 @@ namespace WanderTheWasteland
         public void TakeDamage(GameCharacter attacking, GameCharacter defending)
         {
             defending.health = defending.health - attacking.attack;
-            Console.SetCursorPosition(50, 20);
+            //Console.SetCursorPosition(50, 20);
             //Console.WriteLine(defending.health);
             //Console.WriteLine(attacking.health);
         }

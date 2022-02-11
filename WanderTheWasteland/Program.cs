@@ -24,18 +24,18 @@ namespace WanderTheWasteland
             Console.CursorVisible = false;
 
             while (gameOver == false)
-            {
-                hud.DisplayHUD(player1, enemy1);
-
+            {                
                 // draws
                 map.Draw();
                 player1.Draw();
                 enemy1.Draw();
+                hud.DisplayHUD(player1, enemy1);
 
                 // updates
                 map.Update();
                 player1.Update(ref gameOver, map, player1, enemy1);
                 enemy1.Update(map, enemy1, player1);
+
             }            
         }
     }

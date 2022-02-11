@@ -35,6 +35,10 @@ namespace WanderTheWasteland
             if (health <= 0)
             {
                 PrintCorpse();
+                if (health < 0)
+                {
+                    health = 0;
+                }
             }
         }
         public void Update(Map map, Enemy enemy, Player player)
@@ -101,6 +105,8 @@ namespace WanderTheWasteland
                     }
                 }
             }
+
+            // attempt at tracking player
 
             //// check right
             //if (player.currentPosX == enemy.currentPosX + 1 && player.currentPosY == enemy.currentPosY)
