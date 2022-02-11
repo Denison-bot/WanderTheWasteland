@@ -19,6 +19,7 @@ namespace WanderTheWasteland
             intendedPosX = 25;
             intendedPosY = 9;
             health = 3;
+            attack = 1;
         }
         public void Draw()
         {
@@ -26,7 +27,8 @@ namespace WanderTheWasteland
             currentPosY = intendedPosY;
 
             Console.SetCursorPosition(currentPosX, currentPosY);
-            Console.Write("E");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.Write("■");
 
             if (health <= 0)
             {
@@ -46,10 +48,11 @@ namespace WanderTheWasteland
                     {
                         intendedPosY++;
                     }
-                    if (enemy.Attacking(player, enemy) == true)
-                    {
-                        intendedPosY++;
-                    }
+                    //if (enemy.Attacking(player, enemy) == true)
+                    //{
+                    //    intendedPosY++;
+                    //    player.TakeDamage(enemy, player);
+                    //}
                 }
                 else if (nextMove == down)
                 {
@@ -58,10 +61,11 @@ namespace WanderTheWasteland
                     {
                         intendedPosY--;
                     }
-                    if (enemy.Attacking(player, enemy) == true)
-                    {
-                        intendedPosY--;
-                    }
+                    //if (enemy.Attacking(player, enemy) == true)
+                    //{
+                    //    intendedPosY--;
+                    //    player.TakeDamage(enemy, player);
+                    //}
                 }
                 else if (nextMove == left)
                 {
@@ -73,6 +77,7 @@ namespace WanderTheWasteland
                     if (enemy.Attacking(player, enemy) == true)
                     {
                         intendedPosX++;
+                        player.TakeDamage(enemy, player);
                     }
                 }
                 else if (nextMove == right)
@@ -85,6 +90,7 @@ namespace WanderTheWasteland
                     if (enemy.Attacking(player, enemy) == true)
                     {
                         intendedPosX--;
+                        player.TakeDamage(enemy, player);
                     }
                 }
             }

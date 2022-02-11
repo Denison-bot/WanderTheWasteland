@@ -24,7 +24,13 @@ namespace WanderTheWasteland
             currentPosX = intendedPosX;
             currentPosY = intendedPosY;
             Console.SetCursorPosition(currentPosX, currentPosY);
-            Console.Write("@");
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.Write("■");
+
+            if (health <= 0)
+            {
+                PrintCorpse();
+            }
         }
         
         public void Update(ref bool gameOver, Map map, Player player, Enemy enemy)
@@ -44,7 +50,7 @@ namespace WanderTheWasteland
                     if (player.Attacking(player, enemy) == true)
                     {
                         intendedPosY++;
-                        enemy.TakeDamage(enemy, player);
+                        enemy.TakeDamage(player, enemy);
                     }
                 }
                 else if (input == 's')
@@ -57,7 +63,7 @@ namespace WanderTheWasteland
                     if (player.Attacking(player, enemy) == true)
                     {
                         intendedPosY--;
-                        enemy.TakeDamage(enemy, player);
+                        enemy.TakeDamage(player, enemy);
                     }
                 }
                 else if (input == 'a')
@@ -70,7 +76,7 @@ namespace WanderTheWasteland
                     if (player.Attacking(player, enemy) == true)
                     {
                         intendedPosX++;
-                        enemy.TakeDamage(enemy, player);
+                        enemy.TakeDamage(player, enemy);
                     }
                 }
                 else if (input == 'd')
@@ -83,7 +89,7 @@ namespace WanderTheWasteland
                     if (player.Attacking(player, enemy) == true)
                     {
                         intendedPosX--;
-                        enemy.TakeDamage(enemy, player);
+                        enemy.TakeDamage(player, enemy);
                     }
                 }
                 else if (input == 'p')

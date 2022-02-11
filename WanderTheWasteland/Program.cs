@@ -19,12 +19,11 @@ namespace WanderTheWasteland
         {
             player1.PlayerInit();
             enemy1.EnemyInit();
+            // hide cursor
+            Console.CursorVisible = false;
 
             while (gameOver == false)
             {
-                Console.CursorVisible = false;
-                
-
                 // draws
                 map.Draw();
                 player1.Draw();

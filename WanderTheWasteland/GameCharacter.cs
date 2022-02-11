@@ -33,11 +33,12 @@ namespace WanderTheWasteland
             
         }
 
-        public void TakeDamage(Enemy enemy, Player player)
+        public void TakeDamage(GameCharacter attacking, GameCharacter defending)
         {
-            enemy.health = enemy.health - player.attack;            
+            defending.health = defending.health - attacking.attack;
             //Console.SetCursorPosition(50, 20);
-            //Console.WriteLine(enemy.health);
+            //Console.WriteLine(defending.health);
+            //Console.WriteLine(attacking.health);
         }
     }
 }
