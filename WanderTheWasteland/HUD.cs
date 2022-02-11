@@ -10,10 +10,18 @@ namespace WanderTheWasteland
     {
         public void DisplayHUD(Player player, Enemy enemy)
         {
-            Console.SetCursorPosition(50, 20);
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.SetCursorPosition(0, 20);
             Console.WriteLine("//////////////////////////////");
-            Console.WriteLine("// PLAYER HEALTH: " + player.health + "//");
+            Console.WriteLine("//    " + player.name + " health: " + player.health + "/" + player.maxHealth + "    //");
             Console.WriteLine("//////////////////////////////");
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("//////////////////////////////");
+            Console.WriteLine("//    " + enemy.name + " health: " + enemy.health + "/" + enemy.maxHealth + "     //");
+            Console.WriteLine("//////////////////////////////");
+
         }
     }
 }

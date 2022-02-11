@@ -12,6 +12,7 @@ namespace WanderTheWasteland
         static Player player1 = new Player();
         static Enemy enemy1 = new Enemy();
         static Map map = new Map();
+        static HUD hud = new HUD();
 
         static bool gameOver = false;
 
@@ -24,6 +25,8 @@ namespace WanderTheWasteland
 
             while (gameOver == false)
             {
+                hud.DisplayHUD(player1, enemy1);
+
                 // draws
                 map.Draw();
                 player1.Draw();

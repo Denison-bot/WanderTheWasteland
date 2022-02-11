@@ -17,9 +17,11 @@ namespace WanderTheWasteland
         public void EnemyInit()
         {
             intendedPosX = 25;
-            intendedPosY = 9;
+            intendedPosY = 1;
             health = 3;
+            maxHealth = 3;
             attack = 1;
+            name = "Enemy";
         }
         public void Draw()
         {
@@ -37,6 +39,7 @@ namespace WanderTheWasteland
         }
         public void Update(Map map, Enemy enemy, Player player)
         {
+
             Random rnd = new Random();
             int nextMove = rnd.Next(1, 5);
             if (health > 0)
@@ -48,11 +51,12 @@ namespace WanderTheWasteland
                     {
                         intendedPosY++;
                     }
-                    //if (enemy.Attacking(player, enemy) == true)
-                    //{
-                    //    intendedPosY++;
-                    //    player.TakeDamage(enemy, player);
-                    //}
+                    if (enemy.Attacking(player, enemy) == true)
+                    {
+                        intendedPosY++;
+                        player.TakeDamage(enemy, player);
+                        Console.Beep(150, 100);
+                    }
                 }
                 else if (nextMove == down)
                 {
@@ -61,11 +65,12 @@ namespace WanderTheWasteland
                     {
                         intendedPosY--;
                     }
-                    //if (enemy.Attacking(player, enemy) == true)
-                    //{
-                    //    intendedPosY--;
-                    //    player.TakeDamage(enemy, player);
-                    //}
+                    if (enemy.Attacking(player, enemy) == true)
+                    {
+                        intendedPosY--;
+                        player.TakeDamage(enemy, player);
+                        Console.Beep(150, 100);
+                    }
                 }
                 else if (nextMove == left)
                 {
@@ -78,6 +83,7 @@ namespace WanderTheWasteland
                     {
                         intendedPosX++;
                         player.TakeDamage(enemy, player);
+                        Console.Beep(150, 100);
                     }
                 }
                 else if (nextMove == right)
@@ -91,9 +97,31 @@ namespace WanderTheWasteland
                     {
                         intendedPosX--;
                         player.TakeDamage(enemy, player);
+                        Console.Beep(150, 100);
                     }
                 }
             }
+
+            //// check right
+            //if (player.currentPosX == enemy.currentPosX + 1 && player.currentPosY == enemy.currentPosY)
+            //{
+            //    player.TakeDamage(enemy, player);
+            //}
+            //// check left
+            //else if (player.currentPosX == enemy.currentPosX - 1 && player.currentPosY == enemy.currentPosY)
+            //{
+            //    player.TakeDamage(enemy, player);
+            //}
+            //// check down
+            //else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY + 1)
+            //{
+            //    player.TakeDamage(enemy, player);
+            //}
+            //// check up
+            //else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY - 1)
+            //{
+            //    player.TakeDamage(enemy, player);
+            //}   
 
         }
     }

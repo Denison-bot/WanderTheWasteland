@@ -9,13 +9,15 @@ namespace WanderTheWasteland
     class Player : GameCharacter
     {
         static char input;
-
+        
         public void PlayerInit()
         {
             intendedPosX = 2;
             intendedPosY = 2;
-            health = 5;
+            health = 3;
+            maxHealth = 3;
             attack = 1;
+            name = "Player";
         }
 
         public void Draw()
@@ -46,11 +48,13 @@ namespace WanderTheWasteland
                     if (map.IsWall(intendedPosX, intendedPosY) == true)
                     {
                         intendedPosY++;
+                        Console.Beep(100, 50);
                     }
                     if (player.Attacking(player, enemy) == true)
                     {
                         intendedPosY++;
                         enemy.TakeDamage(player, enemy);
+                        Console.Beep(200, 100);
                     }
                 }
                 else if (input == 's')
@@ -59,11 +63,13 @@ namespace WanderTheWasteland
                     if (map.IsWall(intendedPosX, intendedPosY) == true)
                     {
                         intendedPosY--;
+                        Console.Beep(100, 50);
                     }
                     if (player.Attacking(player, enemy) == true)
                     {
                         intendedPosY--;
                         enemy.TakeDamage(player, enemy);
+                        Console.Beep(200, 100);
                     }
                 }
                 else if (input == 'a')
@@ -72,11 +78,13 @@ namespace WanderTheWasteland
                     if (map.IsWall(intendedPosX, intendedPosY) == true)
                     {
                         intendedPosX++;
+                        Console.Beep(100, 50);
                     }
                     if (player.Attacking(player, enemy) == true)
                     {
                         intendedPosX++;
                         enemy.TakeDamage(player, enemy);
+                        Console.Beep(200, 100);
                     }
                 }
                 else if (input == 'd')
@@ -85,11 +93,13 @@ namespace WanderTheWasteland
                     if (map.IsWall(intendedPosX, intendedPosY) == true)
                     {
                         intendedPosX--;
+                        Console.Beep(100, 50);
                     }
                     if (player.Attacking(player, enemy) == true)
                     {
                         intendedPosX--;
                         enemy.TakeDamage(player, enemy);
+                        Console.Beep(200, 100);
                     }
                 }
                 else if (input == 'p')
