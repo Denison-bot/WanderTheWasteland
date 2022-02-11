@@ -36,7 +36,7 @@ namespace WanderTheWasteland
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(38, 4);
-            Console.WriteLine("  " + enemy.name + " CORDS: " + enemy.currentPosX + ", " + enemy.currentPosY + "                              ");
+            Console.WriteLine("  " + enemy.name + "  CORDS: " + enemy.currentPosX + ", " + enemy.currentPosY + "                              ");
 
 
             Console.BackgroundColor = ConsoleColor.Black;
