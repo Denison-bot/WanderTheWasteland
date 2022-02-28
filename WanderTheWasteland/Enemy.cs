@@ -44,90 +44,90 @@ namespace WanderTheWasteland
         public void Update(Map map, Enemy enemy, Player player)
         {
 
-            Random rnd = new Random();
-            int nextMove = rnd.Next(1, 5);
-            if (health > 0)
-            {
-                if (nextMove == up)
-                {
-                    intendedPosY--;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosY++;
-                    }
-                    if (enemy.Attacking(player, enemy) == true)
-                    {
-                        intendedPosY++;
-                        player.TakeDamage(enemy, player);
-                        Console.Beep(150, 100);
-                    }
-                }
-                else if (nextMove == down)
-                {
-                    intendedPosY++;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosY--;
-                    }
-                    if (enemy.Attacking(player, enemy) == true)
-                    {
-                        intendedPosY--;
-                        player.TakeDamage(enemy, player);
-                        Console.Beep(150, 100);
-                    }
-                }
-                else if (nextMove == left)
-                {
-                    intendedPosX--;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosX++;
-                    }
-                    if (enemy.Attacking(player, enemy) == true)
-                    {
-                        intendedPosX++;
-                        player.TakeDamage(enemy, player);
-                        Console.Beep(150, 100);
-                    }
-                }
-                else if (nextMove == right)
-                {
-                    intendedPosX++;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosX--;
-                    }
-                    if (enemy.Attacking(player, enemy) == true)
-                    {
-                        intendedPosX--;
-                        player.TakeDamage(enemy, player);
-                        Console.Beep(150, 100);
-                    }
-                }
-            }
+            //    Random rnd = new Random();
+            //    int nextMove = rnd.Next(1, 5);
+            //    if (health > 0)
+            //    {
+            //        if (nextMove == up)
+            //        {
+            //            intendedPosY--;
+            //            if (map.IsWall(intendedPosX, intendedPosY) == true)
+            //            {
+            //                intendedPosY++;
+            //            }
+            //            if (enemy.Attacking(player, enemy) == true)
+            //            {
+            //                intendedPosY++;
+            //                player.TakeDamage(enemy, player);
+            //                Console.Beep(150, 100);
+            //            }
+            //        }
+            //        else if (nextMove == down)
+            //        {
+            //            intendedPosY++;
+            //            if (map.IsWall(intendedPosX, intendedPosY) == true)
+            //            {
+            //                intendedPosY--;
+            //            }
+            //            if (enemy.Attacking(player, enemy) == true)
+            //            {
+            //                intendedPosY--;
+            //                player.TakeDamage(enemy, player);
+            //                Console.Beep(150, 100);
+            //            }
+            //        }
+            //        else if (nextMove == left)
+            //        {
+            //            intendedPosX--;
+            //            if (map.IsWall(intendedPosX, intendedPosY) == true)
+            //            {
+            //                intendedPosX++;
+            //            }
+            //            if (enemy.Attacking(player, enemy) == true)
+            //            {
+            //                intendedPosX++;
+            //                player.TakeDamage(enemy, player);
+            //                Console.Beep(150, 100);
+            //            }
+            //        }
+            //        else if (nextMove == right)
+            //        {
+            //            intendedPosX++;
+            //            if (map.IsWall(intendedPosX, intendedPosY) == true)
+            //            {
+            //                intendedPosX--;
+            //            }
+            //            if (enemy.Attacking(player, enemy) == true)
+            //            {
+            //                intendedPosX--;
+            //                player.TakeDamage(enemy, player);
+            //                Console.Beep(150, 100);
+            //            }
+            //        }
+            //    }
 
-            attempt at tracking player
+            //    attempt at tracking player
 
-            // check right
-            if (player.currentPosX == enemy.currentPosX + 1 && player.currentPosY == enemy.currentPosY)
-            {
-                player.TakeDamage(enemy, player);
-            }
-            // check left
-            else if (player.currentPosX == enemy.currentPosX - 1 && player.currentPosY == enemy.currentPosY)
-            {
-                player.TakeDamage(enemy, player);
-            }
-            // check down
-            else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY + 1)
-            {
-                player.TakeDamage(enemy, player);
-            }
-            // check up
-            else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY - 1)
-            {
-                player.TakeDamage(enemy, player);
-            }
+            //    // check right
+            //    if (player.currentPosX == enemy.currentPosX + 1 && player.currentPosY == enemy.currentPosY)
+            //    {
+            //        player.TakeDamage(enemy, player);
+            //    }
+            //    // check left
+            //    else if (player.currentPosX == enemy.currentPosX - 1 && player.currentPosY == enemy.currentPosY)
+            //    {
+            //        player.TakeDamage(enemy, player);
+            //    }
+            //    // check down
+            //    else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY + 1)
+            //    {
+            //        player.TakeDamage(enemy, player);
+            //    }
+            //    // check up
+            //    else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY - 1)
+            //    {
+            //        player.TakeDamage(enemy, player);
+            //    }
 
         }
     }

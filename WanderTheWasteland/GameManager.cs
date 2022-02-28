@@ -27,7 +27,7 @@ namespace WanderTheWasteland
             while (gameOver == false)
             {
                 // draws
-                map.Draw();
+                map.DrawFromFile();
                 player1.Draw();
                 enemy1.Draw();
                 hud.DisplayHUD(player1, enemy1);

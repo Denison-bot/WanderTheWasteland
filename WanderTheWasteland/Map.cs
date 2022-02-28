@@ -9,46 +9,60 @@ namespace WanderTheWasteland
 {
     class Map
     {
-        static int rows;
-        static int cols;
+        static int length;
+        static int width;
 
-        static string mapFile = @"Map.txt";
-        //static string[] map = new string[14];
-        static string[] map = File.ReadAllLines(mapFile);
+        //static char[] splitChar = { ';' }; 
 
-        static void SplitMap()
+        static string mapFile = @"C:\Users\w0434533\Documents\Class\OOP\WanderTheWasteland\WanderTheWasteland\bin\Debug\Map.txt";
+        static char[] map;
+
+
+        public void DrawFromFile()
         {
 
-        }
+            //rows = map.GetLength(0);
+            //cols = map.GetLength(1);
 
-        public void Draw()
-        {
-
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.SetCursorPosition(0, 0);
-            rows = map.GetLength(0);
-            cols = map.GetLength(1);
-
-            for (int y = 0; y < rows; y++)
+            for (int y = 0; y < length; y++)
             {
-                for (int x = 0; x < cols; x++)
+                for (int x = 0; x < width; x++) 
                 {
-                    char element = map[y, x];
-                    Console.Write(element);
+                    Console.WriteLine(map[x, y]);
+                    
                 }
-                Console.WriteLine();
+ 
             }
         }
 
-        public bool IsWall(int x, int y)
-        {
-            if (map[y, x] == '│' || map[y, x] == '─' || map[y, x] == '┤' || map[y, x] == '┘' || map[y, x] == '└')
-            {
-                return true;
-            }
-            return false;
-        }
+        //public void Draw()
+        //{
+
+        //    Console.ForegroundColor = ConsoleColor.White;
+        //    Console.BackgroundColor = ConsoleColor.DarkGray;
+        //    Console.SetCursorPosition(0, 0);
+        //    rows = map.GetLength(0);
+        //    cols = map.GetLength(1);
+
+        //    for (int y = 0; y < rows; y++)
+        //    {
+        //        for (int x = 0; x < cols; x++)
+        //        {
+        //            char element = map[y, x];
+        //            Console.Write(element);
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //}
+
+        //public bool IsWall(int x, int y)
+        //{
+        //    if (map[y, x] == '│' || map[y, x] == '─' || map[y, x] == '┤' || map[y, x] == '┘' || map[y, x] == '└')
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
 
         public void Update()
         {
