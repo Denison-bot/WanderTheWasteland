@@ -106,28 +106,28 @@ namespace WanderTheWasteland
                 }
             }
 
-            // attempt at tracking player
+            attempt at tracking player
 
-            //// check right
-            //if (player.currentPosX == enemy.currentPosX + 1 && player.currentPosY == enemy.currentPosY)
-            //{
-            //    player.TakeDamage(enemy, player);
-            //}
-            //// check left
-            //else if (player.currentPosX == enemy.currentPosX - 1 && player.currentPosY == enemy.currentPosY)
-            //{
-            //    player.TakeDamage(enemy, player);
-            //}
-            //// check down
-            //else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY + 1)
-            //{
-            //    player.TakeDamage(enemy, player);
-            //}
-            //// check up
-            //else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY - 1)
-            //{
-            //    player.TakeDamage(enemy, player);
-            //}   
+            // check right
+            if (player.currentPosX == enemy.currentPosX + 1 && player.currentPosY == enemy.currentPosY)
+            {
+                player.TakeDamage(enemy, player);
+            }
+            // check left
+            else if (player.currentPosX == enemy.currentPosX - 1 && player.currentPosY == enemy.currentPosY)
+            {
+                player.TakeDamage(enemy, player);
+            }
+            // check down
+            else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY + 1)
+            {
+                player.TakeDamage(enemy, player);
+            }
+            // check up
+            else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY - 1)
+            {
+                player.TakeDamage(enemy, player);
+            }
 
         }
     }

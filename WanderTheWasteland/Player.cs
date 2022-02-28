@@ -38,7 +38,7 @@ namespace WanderTheWasteland
                 }
             }
         }
-        
+
         public void Update(ref bool gameOver, Map map, Player player, Enemy enemy)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
@@ -110,7 +110,7 @@ namespace WanderTheWasteland
                 {
                     gameOver = true;
                 }
-            }         
+            }
         }
 
         public void QuitCheck(ref bool gameOver)
