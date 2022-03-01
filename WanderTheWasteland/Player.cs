@@ -44,73 +44,73 @@ namespace WanderTheWasteland
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
 
-            //if (health > 0)
-            //{
-            //    if (input == 'w')
-            //    {
-            //        intendedPosY--;
-            //        if (map.IsWall(intendedPosX, intendedPosY) == true)
-            //        {
-            //            intendedPosY++;
-            //            Console.Beep(100, 50);
-            //        }
-            //        if (player.Attacking(player, enemy) == true)
-            //        {
-            //            intendedPosY++;
-            //            enemy.TakeDamage(player, enemy);
-            //            Console.Beep(200, 100);
-            //        }
-            //    }
-            //    else if (input == 's')
-            //    {
-            //        intendedPosY++;
-            //        if (map.IsWall(intendedPosX, intendedPosY) == true)
-            //        {
-            //            intendedPosY--;
-            //            Console.Beep(100, 50);
-            //        }
-            //        if (player.Attacking(player, enemy) == true)
-            //        {
-            //            intendedPosY--;
-            //            enemy.TakeDamage(player, enemy);
-            //            Console.Beep(200, 100);
-            //        }
-            //    }
-            //    else if (input == 'a')
-            //    {
-            //        intendedPosX--;
-            //        if (map.IsWall(intendedPosX, intendedPosY) == true)
-            //        {
-            //            intendedPosX++;
-            //            Console.Beep(100, 50);
-            //        }
-            //        if (player.Attacking(player, enemy) == true)
-            //        {
-            //            intendedPosX++;
-            //            enemy.TakeDamage(player, enemy);
-            //            Console.Beep(200, 100);
-            //        }
-            //    }
-            //    else if (input == 'd')
-            //    {
-            //        intendedPosX++;
-            //        if (map.IsWall(intendedPosX, intendedPosY) == true)
-            //        {
-            //            intendedPosX--;
-            //            Console.Beep(100, 50);
-            //        }
-            //        if (player.Attacking(player, enemy) == true)
-            //        {
-            //            intendedPosX--;
-            //            enemy.TakeDamage(player, enemy);
-            //            Console.Beep(200, 100);
-            //        }
-            //    }
-            //    else if (input == 'p')
-            //    {
-            //        gameOver = true;
-            //    }
-            //}
+            if (health > 0)
+            {
+                if (input == 'w')
+                {
+                    intendedPosY--;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosY++;
+                        Console.Beep(100, 50);
+                    }
+                    if (player.Attacking(player, enemy) == true)
+                    {
+                        intendedPosY++;
+                        enemy.TakeDamage(player, enemy);
+                        Console.Beep(200, 100);
+                    }
+                }
+                else if (input == 's')
+                {
+                    intendedPosY++;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosY--;
+                        Console.Beep(100, 50);
+                    }
+                    if (player.Attacking(player, enemy) == true)
+                    {
+                        intendedPosY--;
+                        enemy.TakeDamage(player, enemy);
+                        Console.Beep(200, 100);
+                    }
+                }
+                else if (input == 'a')
+                {
+                    intendedPosX--;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosX++;
+                        Console.Beep(100, 50);
+                    }
+                    if (player.Attacking(player, enemy) == true)
+                    {
+                        intendedPosX++;
+                        enemy.TakeDamage(player, enemy);
+                        Console.Beep(200, 100);
+                    }
+                }
+                else if (input == 'd')
+                {
+                    intendedPosX++;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosX--;
+                        Console.Beep(100, 50);
+                    }
+                    if (player.Attacking(player, enemy) == true)
+                    {
+                        intendedPosX--;
+                        enemy.TakeDamage(player, enemy);
+                        Console.Beep(200, 100);
+                    }
+                }
+                else if (input == 'p')
+                {
+                    gameOver = true;
+                }
+            }
         }
 
         public void QuitCheck(ref bool gameOver)

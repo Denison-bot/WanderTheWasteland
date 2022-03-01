@@ -12,63 +12,43 @@ namespace WanderTheWasteland
         static int length;
         static int width;
 
-        //static char[] splitChar = { ';' }; 
-
-        static string mapFile = @"C:\Users\w0434533\Documents\Class\OOP\WanderTheWasteland\WanderTheWasteland\bin\Debug\Map.txt";
-        static char[] map;
-
+        static string mapFile = @"Map.txt";
+        static string[] map = File.ReadAllLines(mapFile);
 
         public void DrawFromFile()
         {
 
-            //rows = map.GetLength(0);
-            //cols = map.GetLength(1);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.SetCursorPosition(0, 0);
+
+            length = map.Length;
+            width = map[0].Length;
 
             for (int y = 0; y < length; y++)
             {
-                for (int x = 0; x < width; x++) 
+                for (int x = 0; x < width; x++)
                 {
-                    Console.WriteLine(map[x, y]);
-                    
+                    Console.Write(map[y][x]);
                 }
- 
+                Console.WriteLine();
             }
         }
 
-        //public void Draw()
-        //{
-
-        //    Console.ForegroundColor = ConsoleColor.White;
-        //    Console.BackgroundColor = ConsoleColor.DarkGray;
-        //    Console.SetCursorPosition(0, 0);
-        //    rows = map.GetLength(0);
-        //    cols = map.GetLength(1);
-
-        //    for (int y = 0; y < rows; y++)
-        //    {
-        //        for (int x = 0; x < cols; x++)
-        //        {
-        //            char element = map[y, x];
-        //            Console.Write(element);
-        //        }
-        //        Console.WriteLine();
-        //    }
-        //}
-
-        //public bool IsWall(int x, int y)
-        //{
-        //    if (map[y, x] == '│' || map[y, x] == '─' || map[y, x] == '┤' || map[y, x] == '┘' || map[y, x] == '└')
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
+        public bool IsWall(int x, int y)
+        {
+            if (map[y][x] == '│' || map[y][x] == '─' || map[y][x] == '┤' || map[y][x] == '┘' || map[y][x] == '└')
+            {
+                return true;
+            }
+            return false;
+        }
 
         public void Update()
         {
 
         }
-       
+
     }
 }
 
@@ -90,3 +70,24 @@ namespace WanderTheWasteland
 //    {'│', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '│'},
 //    {'└', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '─', '┘'},
 //};
+
+
+//public void Draw()
+//{
+
+//    Console.ForegroundColor = ConsoleColor.White;
+//    Console.BackgroundColor = ConsoleColor.DarkGray;
+//    Console.SetCursorPosition(0, 0);
+//    rows = map.GetLength(0);
+//    cols = map.GetLength(1);
+
+//    for (int y = 0; y < rows; y++)
+//    {
+//        for (int x = 0; x < cols; x++)
+//        {
+//            char element = map[y, x];
+//            Console.Write(element);
+//        }
+//        Console.WriteLine();
+//    }
+//}
