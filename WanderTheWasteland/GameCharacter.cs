@@ -42,5 +42,14 @@ namespace WanderTheWasteland
             //Console.WriteLine(defending.health);
             //Console.WriteLine(attacking.health);
         }
+
+        public bool PickUpItem(Player player, Item item)
+        {
+            if (player.intendedPosX == item.posX && player.intendedPosY == item.posY)
+            {
+                return true;   
+            }
+            return false;
+        }
     }
 }

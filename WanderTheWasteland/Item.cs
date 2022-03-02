@@ -12,5 +12,11 @@ namespace WanderTheWasteland
         public int posY;
         public string name;
         public string itemIcon;
+
+        public void RemoveIcon()
+        {
+            itemIcon = " ";
+            Console.Write(itemIcon);
+        }
     }
 }

@@ -22,7 +22,5 @@ namespace WanderTheWasteland
             Console.SetCursorPosition(posX, posY);
             Console.Write(itemIcon);
         }
-
-        
     }
 }

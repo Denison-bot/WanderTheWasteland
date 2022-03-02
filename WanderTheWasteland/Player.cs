@@ -39,7 +39,7 @@ namespace WanderTheWasteland
             }
         }
 
-        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy)
+        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy, Item item)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
@@ -60,6 +60,10 @@ namespace WanderTheWasteland
                         enemy.TakeDamage(player, enemy);
                         Console.Beep(200, 100);
                     }
+                    if (player.PickUpItem(player, item) == true)
+                    {
+                        item.RemoveIcon();
+                    }
                 }
                 else if (input == 's')
                 {
@@ -74,6 +78,10 @@ namespace WanderTheWasteland
                         intendedPosY--;
                         enemy.TakeDamage(player, enemy);
                         Console.Beep(200, 100);
+                    }
+                    if (player.PickUpItem(player, item) == true)
+                    {
+                        item.RemoveIcon();
                     }
                 }
                 else if (input == 'a')
@@ -90,6 +98,10 @@ namespace WanderTheWasteland
                         enemy.TakeDamage(player, enemy);
                         Console.Beep(200, 100);
                     }
+                    if (player.PickUpItem(player, item) == true)
+                    {
+                        item.RemoveIcon();
+                    }
                 }
                 else if (input == 'd')
                 {
@@ -104,6 +116,10 @@ namespace WanderTheWasteland
                         intendedPosX--;
                         enemy.TakeDamage(player, enemy);
                         Console.Beep(200, 100);
+                    }
+                    if (player.PickUpItem(player, item) == true)
+                    {
+                        item.RemoveIcon();
                     }
                 }
                 else if (input == 'p')
