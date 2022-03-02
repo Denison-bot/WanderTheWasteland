@@ -13,6 +13,7 @@ namespace WanderTheWasteland
         static Enemy enemy1 = new Enemy();
         static Map map = new Map();
         static HUD hud = new HUD();
+        static Health healthPack1 = new Health();
 
         static bool gameOver = false;
 
@@ -20,6 +21,7 @@ namespace WanderTheWasteland
         {
             player1.PlayerInit();
             enemy1.EnemyInit();
+            healthPack1.InitHealth();
             
             // hide cursor
             Console.CursorVisible = false;
@@ -30,6 +32,7 @@ namespace WanderTheWasteland
                 map.DrawFromFile();
                 player1.Draw();
                 enemy1.Draw();
+                healthPack1.Draw(1, 1);
                 hud.DisplayHUD(player1, enemy1);
 
                 // updates

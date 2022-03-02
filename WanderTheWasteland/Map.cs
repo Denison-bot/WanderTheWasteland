@@ -28,7 +28,7 @@ namespace WanderTheWasteland
             for (int y = 0; y < length; y++)
             {
                 for (int x = 0; x < width; x++)
-                {
+                { 
                     Console.Write(map[y][x]);
                 }
                 Console.WriteLine();

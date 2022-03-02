@@ -46,7 +46,9 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="GameCharacter.cs" />
     <Compile Include="GameManager.cs" />
+    <Compile Include="Health.cs" />
     <Compile Include="HUD.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
