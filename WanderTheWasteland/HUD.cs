@@ -17,7 +17,7 @@ namespace WanderTheWasteland
             Console.SetCursorPosition(4, 15);
             Console.Write(hudBorder);
             Console.SetCursorPosition(4, 16);
-            Console.WriteLine("//    " + player.name + " health: " + player.health + "/" + player.maxHealth + "    //");
+            Console.WriteLine("//    " + player.name + " health: " + player.currentHealth + "/" + player.maxHealth + "    //");
             Console.SetCursorPosition(4, 17);
             Console.Write(hudBorder);
 
@@ -26,7 +26,7 @@ namespace WanderTheWasteland
             Console.SetCursorPosition(4, 18);
             Console.Write(hudBorder);
             Console.SetCursorPosition(4, 19);
-            Console.WriteLine("//    " + enemy.name + " health: " + enemy.health + "/" + enemy.maxHealth + "     //");
+            Console.WriteLine("//    " + enemy.name + " health: " + enemy.currentHealth + "/" + enemy.maxHealth + "     //");
             Console.SetCursorPosition(4, 20);
             Console.Write(hudBorder);
             // -------------------------------------------------------------------------------------------------------------

@@ -13,10 +13,27 @@ namespace WanderTheWasteland
         public string name;
         public string itemIcon;
 
-        public void RemoveIcon()
+        public void UseItem(Item item, Player player)
         {
-            itemIcon = " ";
-            Console.Write(itemIcon);
+            if (name == "HealthPack")
+            {
+                Heal(player);
+                itemIcon = "";
+                posX = 0;
+                posY = 0;
+            }
+            else if (name == "PowerBuff")
+            {
+                itemIcon = "";
+                posX = 0;
+                posY = 0;
+            }
         }
+        public void Heal(Player player)
+        {
+            player.currentHealth = player.currentHealth + 1;
+        }
+
+        
     }
 }

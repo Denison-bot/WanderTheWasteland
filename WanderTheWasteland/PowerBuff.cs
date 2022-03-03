@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace WanderTheWasteland
 {
-    class Health : Item
+    class PowerBuff : Item
     {
-        public void InitHealth()
+        public void InitPowerBuff()
         {
-            name = "HealthPack";
-            itemIcon = "H";
+            name = "PowerBuff";
+            itemIcon = "P";
             posX = 1;
-            posY = 1;
+            posY = 2;
         }
 
         public void Draw()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(posX, posY);
             Console.Write(itemIcon);
         }

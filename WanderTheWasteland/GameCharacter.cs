@@ -14,7 +14,7 @@ namespace WanderTheWasteland
         public int intendedPosY;
         public string name;
 
-        public int health;
+        public int currentHealth;
         public int maxHealth;
         public int attack; 
 
@@ -37,14 +37,14 @@ namespace WanderTheWasteland
 
         public void TakeDamage(GameCharacter attacking, GameCharacter defending)
         {
-            defending.health = defending.health - attacking.attack;
+            defending.currentHealth = defending.currentHealth - attacking.attack;
             //Console.SetCursorPosition(50, 20);
             //Console.WriteLine(defending.health);
             //Console.WriteLine(attacking.health);
         }
 
         public bool PickUpItem(Player player, Item item)
-        {
+        {            
             if (player.intendedPosX == item.posX && player.intendedPosY == item.posY)
             {
                 return true;   

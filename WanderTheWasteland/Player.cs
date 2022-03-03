@@ -12,9 +12,9 @@ namespace WanderTheWasteland
         
         public void PlayerInit()
         {
-            intendedPosX = 2;
+            intendedPosX = 8;
             intendedPosY = 2;
-            health = 3;
+            currentHealth = 1;
             maxHealth = 3;
             attack = 1;
             name = "Player";
@@ -29,22 +29,22 @@ namespace WanderTheWasteland
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.Write("■");
 
-            if (health <= 0)
+            if (currentHealth <= 0)
             {
                 PrintCorpse();
-                if (health < 0)
+                if (currentHealth < 0)
                 {
-                    health = 0;
+                    currentHealth = 0;
                 }
             }
         }
 
-        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy, Item item)
+        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy, Item item, Item item2)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
 
-            if (health > 0)
+            if (currentHealth > 0)
             {
                 if (input == 'w')
                 {
@@ -62,7 +62,11 @@ namespace WanderTheWasteland
                     }
                     if (player.PickUpItem(player, item) == true)
                     {
-                        item.RemoveIcon();
+                        item.UseItem(item, player);
+                    }
+                    else if(player.PickUpItem(player, item2) == true)
+                    {
+                        item.UseItem(item2, player);
                     }
                 }
                 else if (input == 's')
@@ -81,7 +85,11 @@ namespace WanderTheWasteland
                     }
                     if (player.PickUpItem(player, item) == true)
                     {
-                        item.RemoveIcon();
+                        item.UseItem(item, player);
+                    }
+                    else if (player.PickUpItem(player, item2) == true)
+                    {
+                        item.UseItem(item2, player);
                     }
                 }
                 else if (input == 'a')
@@ -100,7 +108,11 @@ namespace WanderTheWasteland
                     }
                     if (player.PickUpItem(player, item) == true)
                     {
-                        item.RemoveIcon();
+                        item.UseItem(item, player);
+                    }
+                    else if(player.PickUpItem(player, item2) == true)
+                    {
+                        item.UseItem(item2, player);
                     }
                 }
                 else if (input == 'd')
@@ -119,7 +131,11 @@ namespace WanderTheWasteland
                     }
                     if (player.PickUpItem(player, item) == true)
                     {
-                        item.RemoveIcon();
+                        item.UseItem(item, player);
+                    }
+                    else if(player.PickUpItem(player, item2) == true)
+                    {
+                        item.UseItem(item2, player);
                     }
                 }
                 else if (input == 'p')
