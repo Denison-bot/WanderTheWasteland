@@ -44,12 +44,6 @@ namespace WanderTheWasteland
             //Console.WriteLine(attacking.health);
         }
 
-        public void Wait()
-        {
-            intendedPosX = currentPosX;
-            intendedPosY = currentPosY;
-        }
-
         public bool PickUpItem(Player player, Item item)
         {            
             if (player.intendedPosX == item.posX && player.intendedPosY == item.posY)

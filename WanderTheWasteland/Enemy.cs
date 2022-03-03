@@ -13,7 +13,6 @@ namespace WanderTheWasteland
         private const int down = 2;
         private const int left = 3;
         private const int right = 4;
-        public bool canMove = true;
 
         public void EnemyInit()
         {
@@ -48,69 +47,65 @@ namespace WanderTheWasteland
             Random rnd = new Random();
             int nextMove = rnd.Next(1, 5);
 
-            if (canMove == true)
+            if (currentHealth > 0)
             {
-                if (currentHealth > 0)
+                if (nextMove == up)
                 {
-                    if (nextMove == up)
-                    {
-                        intendedPosY--;
-                        if (map.IsWall(intendedPosX, intendedPosY) == true)
-                        {
-                            intendedPosY++;
-                        }
-                        if (enemy.Attacking(player, enemy) == true)
-                        {
-                            intendedPosY++;
-                            player.TakeDamage(enemy, player);
-                            Console.Beep(150, 100);
-                        }
-                    }
-                    else if (nextMove == down)
+                    intendedPosY--;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
                     {
                         intendedPosY++;
-                        if (map.IsWall(intendedPosX, intendedPosY) == true)
-                        {
-                            intendedPosY--;
-                        }
-                        if (enemy.Attacking(player, enemy) == true)
-                        {
-                            intendedPosY--;
-                            player.TakeDamage(enemy, player);
-                            Console.Beep(150, 100);
-                        }
                     }
-                    else if (nextMove == left)
+                    if (enemy.Attacking(player, enemy) == true)
                     {
-                        intendedPosX--;
-                        if (map.IsWall(intendedPosX, intendedPosY) == true)
-                        {
-                            intendedPosX++;
-                        }
-                        if (enemy.Attacking(player, enemy) == true)
-                        {
-                            intendedPosX++;
-                            player.TakeDamage(enemy, player);
-                            Console.Beep(150, 100);
-                        }
+                        intendedPosY++;
+                        player.TakeDamage(enemy, player);
+                        Console.Beep(150, 100);
                     }
-                    else if (nextMove == right)
+                }
+                else if (nextMove == down)
+                {
+                    intendedPosY++;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosY--;
+                    }
+                    if (enemy.Attacking(player, enemy) == true)
+                    {
+                        intendedPosY--;
+                        player.TakeDamage(enemy, player);
+                        Console.Beep(150, 100);
+                    }
+                }
+                else if (nextMove == left)
+                {
+                    intendedPosX--;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
                     {
                         intendedPosX++;
-                        if (map.IsWall(intendedPosX, intendedPosY) == true)
-                        {
-                            intendedPosX--;
-                        }
-                        if (enemy.Attacking(player, enemy) == true)
-                        {
-                            intendedPosX--;
-                            player.TakeDamage(enemy, player);
-                            Console.Beep(150, 100);
-                        }
+                    }
+                    if (enemy.Attacking(player, enemy) == true)
+                    {
+                        intendedPosX++;
+                        player.TakeDamage(enemy, player);
+                        Console.Beep(150, 100);
+                    }
+                }
+                else if (nextMove == right)
+                {
+                    intendedPosX++;
+                    if (map.IsWall(intendedPosX, intendedPosY) == true)
+                    {
+                        intendedPosX--;
+                    }
+                    if (enemy.Attacking(player, enemy) == true)
+                    {
+                        intendedPosX--;
+                        player.TakeDamage(enemy, player);
+                        Console.Beep(150, 100);
                     }
                 }
             }
-            else Wait();
         }
     }
 }

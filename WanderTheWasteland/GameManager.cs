@@ -34,9 +34,9 @@ namespace WanderTheWasteland
 
             while (gameOver == false)
             {
-                // draws
-                map.DrawFromFile();
-                player1.Draw();
+                // DRAWS
+
+                map.DrawFromFile();                
                 enemy1.Draw();
                 //enemy2.Draw();
                 healthPack1.Draw();
@@ -44,9 +44,30 @@ namespace WanderTheWasteland
                 speedBuff1.Draw();
                 hud.DisplayHUD(player1, enemy1);
 
-                // updates
-                map.Update();
+                // PLAYER
+
+                if (player1.speedBuffed == true)
+                {
+                    for (int i = 0; i < player1.speedBoost; i++)
+                    {
+                        player1.Draw();
+                        player1.Update(ref gameOver, map, player1, enemy1, healthPack1, powerBuff1, speedBuff1);
+                        map.DrawFromFile();
+                        enemy1.Draw();
+                        //enemy2.Draw();
+                        healthPack1.Draw();
+                        powerBuff1.Draw();
+                        speedBuff1.Draw();
+                        player1.Draw();
+                    }
+                }
+
+                // UPDATES
+
+                else
+                player1.Draw();
                 player1.Update(ref gameOver, map, player1, enemy1, healthPack1, powerBuff1, speedBuff1);
+                map.Update();
                 enemy1.Update(map, enemy1, player1);
                 //enemy2.Update(map, enemy1, player1);
             }

@@ -49,7 +49,7 @@ namespace WanderTheWasteland
 
         public void BuffSpeed(Player player)
         {
-            player.speedBuffed = true;
+            player.speedBuffed = true;                        
         }
     }
 }

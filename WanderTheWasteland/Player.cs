@@ -10,6 +10,8 @@ namespace WanderTheWasteland
     {
         static char input;
         public bool speedBuffed = false;
+        public int speedBoost;
+        public char playerIcon;
         
         public void PlayerInit()
         {
@@ -19,6 +21,7 @@ namespace WanderTheWasteland
             maxHealth = 3;
             attack = 1;
             name = "Player";
+            speedBoost = 1;
         }
 
         public void Draw()
@@ -28,6 +31,7 @@ namespace WanderTheWasteland
             currentPosY = intendedPosY;
             Console.SetCursorPosition(currentPosX, currentPosY);
             Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.Write("■");
 
             if (currentHealth <= 0)
