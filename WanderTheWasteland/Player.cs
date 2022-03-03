@@ -9,6 +9,7 @@ namespace WanderTheWasteland
     class Player : GameCharacter
     {
         static char input;
+        public bool speedBuffed = false;
         
         public void PlayerInit()
         {
@@ -39,7 +40,7 @@ namespace WanderTheWasteland
             }
         }
 
-        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy, Item item, Item item2)
+        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy, Item item, Item item2, Item item3)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
@@ -64,9 +65,13 @@ namespace WanderTheWasteland
                     {
                         item.UseItem(item, player);
                     }
-                    else if(player.PickUpItem(player, item2) == true)
+                    if (player.PickUpItem(player, item2) == true)
                     {
-                        item.UseItem(item2, player);
+                        item2.UseItem(item2, player);
+                    }
+                    if (player.PickUpItem(player, item3) == true)
+                    {
+                        item3.UseItem(item3, player);
                     }
                 }
                 else if (input == 's')
@@ -87,9 +92,13 @@ namespace WanderTheWasteland
                     {
                         item.UseItem(item, player);
                     }
-                    else if (player.PickUpItem(player, item2) == true)
+                    if (player.PickUpItem(player, item2) == true)
                     {
-                        item.UseItem(item2, player);
+                        item2.UseItem(item2, player);
+                    }
+                    if (player.PickUpItem(player, item3) == true)
+                    {
+                        item3.UseItem(item3, player);
                     }
                 }
                 else if (input == 'a')
@@ -110,9 +119,13 @@ namespace WanderTheWasteland
                     {
                         item.UseItem(item, player);
                     }
-                    else if(player.PickUpItem(player, item2) == true)
+                    if (player.PickUpItem(player, item2) == true)
                     {
-                        item.UseItem(item2, player);
+                        item2.UseItem(item2, player);
+                    }
+                    if (player.PickUpItem(player, item3) == true)
+                    {
+                        item3.UseItem(item3, player);
                     }
                 }
                 else if (input == 'd')
@@ -133,9 +146,13 @@ namespace WanderTheWasteland
                     {
                         item.UseItem(item, player);
                     }
-                    else if(player.PickUpItem(player, item2) == true)
+                    if (player.PickUpItem(player, item2) == true)
                     {
-                        item.UseItem(item2, player);
+                        item2.UseItem(item2, player);
+                    }
+                    if (player.PickUpItem(player, item3) == true)
+                    {
+                        item3.UseItem(item3, player);
                     }
                 }
                 else if (input == 'p')

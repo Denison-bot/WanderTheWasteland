@@ -16,7 +16,8 @@ namespace WanderTheWasteland
 
         public int currentHealth;
         public int maxHealth;
-        public int attack; 
+        public int attack;
+        
 
         public bool Attacking(Player player, Enemy enemy)
         {
@@ -41,6 +42,12 @@ namespace WanderTheWasteland
             //Console.SetCursorPosition(50, 20);
             //Console.WriteLine(defending.health);
             //Console.WriteLine(attacking.health);
+        }
+
+        public void Wait()
+        {
+            intendedPosX = currentPosX;
+            intendedPosY = currentPosY;
         }
 
         public bool PickUpItem(Player player, Item item)

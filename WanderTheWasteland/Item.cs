@@ -24,6 +24,14 @@ namespace WanderTheWasteland
             }
             else if (name == "PowerBuff")
             {
+                BuffAttack(player);
+                itemIcon = "";
+                posX = 0;
+                posY = 0;
+            }
+            else if (name == "SpeedBuff")
+            {
+                BuffSpeed(player);
                 itemIcon = "";
                 posX = 0;
                 posY = 0;
@@ -34,6 +42,14 @@ namespace WanderTheWasteland
             player.currentHealth = player.currentHealth + 1;
         }
 
-        
+        public void BuffAttack(Player player)
+        {
+            player.attack = 3;
+        }
+
+        public void BuffSpeed(Player player)
+        {
+            player.speedBuffed = true;
+        }
     }
 }

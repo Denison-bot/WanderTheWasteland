@@ -15,7 +15,8 @@ namespace WanderTheWasteland
         static HUD hud = new HUD();
         static Health healthPack1 = new Health();
         static PowerBuff powerBuff1 = new PowerBuff();
-        static Enemy2 enemy2 = new Enemy2();
+        static SpeedBuff speedBuff1 = new SpeedBuff();
+        //static Enemy2 enemy2 = new Enemy2();
 
         static bool gameOver = false;
 
@@ -23,9 +24,10 @@ namespace WanderTheWasteland
         {
             player1.PlayerInit();
             enemy1.EnemyInit();
-            enemy2.EnemyInit();
+            //enemy2.EnemyInit();
             healthPack1.InitHealth();
             powerBuff1.InitPowerBuff();
+            speedBuff1.InitSpeedBuff();
             
             // hide cursor
             Console.CursorVisible = false;
@@ -36,16 +38,17 @@ namespace WanderTheWasteland
                 map.DrawFromFile();
                 player1.Draw();
                 enemy1.Draw();
-                enemy2.Draw();
+                //enemy2.Draw();
                 healthPack1.Draw();
                 powerBuff1.Draw();
+                speedBuff1.Draw();
                 hud.DisplayHUD(player1, enemy1);
 
                 // updates
                 map.Update();
-                player1.Update(ref gameOver, map, player1, enemy1, healthPack1, powerBuff1);
+                player1.Update(ref gameOver, map, player1, enemy1, healthPack1, powerBuff1, speedBuff1);
                 enemy1.Update(map, enemy1, player1);
-                enemy2.Update(map, enemy1, player1);
+                //enemy2.Update(map, enemy1, player1);
             }
         }
     }
