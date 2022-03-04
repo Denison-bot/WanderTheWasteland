@@ -8,18 +8,15 @@ namespace WanderTheWasteland
 {
     class Enemy2 : GameCharacter
     {
-        private const int up = 1;
-        private const int down = 2;
-        private const int left = 3;
-        private const int right = 4;
+        private bool movingUp = true;
 
-        public void EnemyInit()
+        public void EnemyInit(int x, int y)
         {
-            intendedPosX = 25;
-            intendedPosY = 5;
+            intendedPosX = x;
+            intendedPosY = y;
             currentHealth = 3;
             maxHealth = 3;
-            attack = 2;
+            attack = 3;
             name = "Enemy 2";
         }
         public void Draw()
@@ -41,66 +38,35 @@ namespace WanderTheWasteland
             }
         }
 
-        public void Update(Map map, Enemy enemy, Player player)
+        public void Update(Map map, Enemy enemy, Enemy2 enemy2, Player player)
         {
-
-            Random rnd = new Random();
-            int nextMove = rnd.Next(1, 5);
             if (currentHealth > 0)
             {
-                if (nextMove == up)
+                if (movingUp == true)
                 {
                     intendedPosY--;
                     if (map.IsWall(intendedPosX, intendedPosY) == true)
                     {
                         intendedPosY++;
+                        movingUp = false;
                     }
-                    if (enemy.Attacking(player, enemy) == true)
+                    if (enemy.Attacking(player, enemy, enemy2) == true)
                     {
                         intendedPosY++;
                         player.TakeDamage(enemy, player);
                         Console.Beep(150, 100);
                     }
-                    
                 }
-                else if (nextMove == down)
-                {
+                else if (movingUp == false){
                     intendedPosY++;
                     if (map.IsWall(intendedPosX, intendedPosY) == true)
                     {
                         intendedPosY--;
+                        movingUp = true;
                     }
-                    if (enemy.Attacking(player, enemy) == true)
+                    if (enemy.Attacking(player, enemy, enemy2) == true)
                     {
-                        intendedPosY--;
-                        player.TakeDamage(enemy, player);
-                        Console.Beep(150, 100);
-                    }
-                }
-                else if (nextMove == left)
-                {
-                    intendedPosX--;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosX++;
-                    }
-                    if (enemy.Attacking(player, enemy) == true)
-                    {
-                        intendedPosX++;
-                        player.TakeDamage(enemy, player);
-                        Console.Beep(150, 100);
-                    }
-                }
-                else if (nextMove == right)
-                {
-                    intendedPosX++;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosX--;
-                    }
-                    if (enemy.Attacking(player, enemy) == true)
-                    {
-                        intendedPosX--;
+                        intendedPosY++;
                         player.TakeDamage(enemy, player);
                         Console.Beep(150, 100);
                     }

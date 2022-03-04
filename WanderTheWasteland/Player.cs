@@ -11,7 +11,7 @@ namespace WanderTheWasteland
         static char input;
         public bool speedBuffed = false;
         public int speedBoost;
-        public char playerIcon;
+
         
         public void PlayerInit()
         {
@@ -44,7 +44,7 @@ namespace WanderTheWasteland
             }
         }
 
-        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy, Item item, Item item2, Item item3)
+        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy, Enemy2 enemy2, Item item, Item item2, Item item3)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
@@ -59,7 +59,7 @@ namespace WanderTheWasteland
                         intendedPosY++;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy) == true)
+                    if (player.Attacking(player, enemy, enemy2) == true)
                     {
                         intendedPosY++;
                         enemy.TakeDamage(player, enemy);
@@ -86,7 +86,7 @@ namespace WanderTheWasteland
                         intendedPosY--;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy) == true)
+                    if (player.Attacking(player, enemy, enemy2) == true)
                     {
                         intendedPosY--;
                         enemy.TakeDamage(player, enemy);
@@ -113,7 +113,7 @@ namespace WanderTheWasteland
                         intendedPosX++;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy) == true)
+                    if (player.Attacking(player, enemy, enemy2) == true)
                     {
                         intendedPosX++;
                         enemy.TakeDamage(player, enemy);
@@ -140,7 +140,7 @@ namespace WanderTheWasteland
                         intendedPosX--;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy) == true)
+                    if (player.Attacking(player, enemy, enemy2) == true)
                     {
                         intendedPosX--;
                         enemy.TakeDamage(player, enemy);

@@ -19,9 +19,10 @@ namespace WanderTheWasteland
         public int attack;
         
 
-        public bool Attacking(Player player, Enemy enemy)
+        public bool Attacking(Player player, Enemy enemy, Enemy2 enemy2)
         {
-            if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
+            if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY ||
+                player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
             {
                 //intendedPosX = currentPosX;                
                 return true;

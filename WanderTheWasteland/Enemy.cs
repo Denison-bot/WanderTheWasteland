@@ -41,7 +41,7 @@ namespace WanderTheWasteland
                 }
             }
         }
-        public void Update(Map map, Enemy enemy, Player player)
+        public void Update(Map map, Enemy enemy, Enemy2 enemy2, Player player)
         {
 
             Random rnd = new Random();
@@ -56,7 +56,7 @@ namespace WanderTheWasteland
                     {
                         intendedPosY++;
                     }
-                    if (enemy.Attacking(player, enemy) == true)
+                    if (enemy.Attacking(player, enemy, enemy2) == true)
                     {
                         intendedPosY++;
                         player.TakeDamage(enemy, player);
@@ -70,7 +70,7 @@ namespace WanderTheWasteland
                     {
                         intendedPosY--;
                     }
-                    if (enemy.Attacking(player, enemy) == true)
+                    if (enemy.Attacking(player, enemy, enemy2) == true)
                     {
                         intendedPosY--;
                         player.TakeDamage(enemy, player);
@@ -84,7 +84,7 @@ namespace WanderTheWasteland
                     {
                         intendedPosX++;
                     }
-                    if (enemy.Attacking(player, enemy) == true)
+                    if (enemy.Attacking(player, enemy, enemy2) == true)
                     {
                         intendedPosX++;
                         player.TakeDamage(enemy, player);
@@ -98,7 +98,7 @@ namespace WanderTheWasteland
                     {
                         intendedPosX--;
                     }
-                    if (enemy.Attacking(player, enemy) == true)
+                    if (enemy.Attacking(player, enemy, enemy2) == true)
                     {
                         intendedPosX--;
                         player.TakeDamage(enemy, player);
