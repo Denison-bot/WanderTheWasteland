@@ -18,10 +18,11 @@ namespace WanderTheWasteland
         {
             intendedPosX = 25;
             intendedPosY = 2;
-            currentHealth = 3;
-            maxHealth = 3;
+            currentHealth = 5;
+            maxHealth = 5;
             attack = 1;
             name = "Enemy 1";
+            //attackedLast = false;
         }
         public void Draw()
         {

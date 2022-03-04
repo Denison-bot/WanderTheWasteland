@@ -16,8 +16,9 @@ namespace WanderTheWasteland
             intendedPosY = 5;
             currentHealth = 3;
             maxHealth = 3;
-            attack = 1;
+            attack = 5;
             name = "Enemy 2";
+            //attackedLast = false;
         }
         public void Draw()
         {
@@ -25,7 +26,7 @@ namespace WanderTheWasteland
             currentPosY = intendedPosY;
 
             Console.SetCursorPosition(currentPosX, currentPosY);
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.Write("■");
 
             if (currentHealth <= 0)
@@ -70,7 +71,7 @@ namespace WanderTheWasteland
                         player.TakeDamage(enemy, player);
                         Console.Beep(150, 100);
                     }
-                }
+                }        
             }
         }
     }

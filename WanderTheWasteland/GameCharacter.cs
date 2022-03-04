@@ -13,11 +13,10 @@ namespace WanderTheWasteland
         public int intendedPosX;
         public int intendedPosY;
         public string name;
-
         public int currentHealth;
         public int maxHealth;
         public int attack;
-        
+        //public bool attackedLast;
 
         public bool Attacking(Player player, Enemy enemy, Enemy2 enemy2, Enemy3 enemy3)
         {
@@ -40,6 +39,7 @@ namespace WanderTheWasteland
 
         public void TakeDamage(GameCharacter attacking, GameCharacter defending)
         {
+            //attackedLast = true;
             defending.currentHealth = defending.currentHealth - attacking.attack;
             //Console.SetCursorPosition(50, 20);
             //Console.WriteLine(defending.health);

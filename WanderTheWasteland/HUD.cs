@@ -6,47 +6,99 @@ using System.Threading.Tasks;
 
 namespace WanderTheWasteland
 {
+    // ATTACKEDLAST BOOL DOES NOT RESET TO FALSE AFTER COMBAT HHHHHHHHHH 
+
     class HUD
     {
-        string hudBorder = "//////////////////////////////";
+        string hudBorderTop = "┌──────────────────────────┐";
+        string hudBorderBottom = "└──────────────────────────┘";
+
+        //public void DisplayModularHUD(Player player, Enemy enemy, Enemy2 enemy2, Enemy3 enemy3)
+        //{
+
+        //    // PLAYER STATS
+        //    Console.BackgroundColor = ConsoleColor.DarkBlue;
+        //    Console.ForegroundColor = ConsoleColor.White;
+        //    Console.SetCursorPosition(4, 15);
+        //    Console.Write(hudBorderTop);
+        //    Console.SetCursorPosition(4, 16);
+        //    Console.WriteLine("│    " + player.name + " health: " + player.currentHealth + "/" + player.maxHealth + "    │");
+        //    Console.SetCursorPosition(4, 17);
+        //    Console.Write(hudBorderBottom);
+        //    // ENEMY STATS
+        //    if (enemy.attackedLast == true)
+        //    {
+        //        Console.BackgroundColor = ConsoleColor.DarkRed;
+        //        Console.ForegroundColor = ConsoleColor.White;
+        //        Console.SetCursorPosition(4, 18);
+        //        Console.Write(hudBorderTop);
+        //        Console.SetCursorPosition(4, 19);
+        //        Console.WriteLine("│    " + enemy.name + " health: " + enemy.currentHealth + "/" + enemy.maxHealth + "   │");
+        //        Console.SetCursorPosition(4, 20);
+        //        Console.Write(hudBorderBottom);
+        //    }
+        //    else if (enemy2.attackedLast == true)
+        //    {
+        //        Console.BackgroundColor = ConsoleColor.DarkYellow;
+        //        Console.ForegroundColor = ConsoleColor.White;
+        //        Console.SetCursorPosition(4, 18);
+        //        Console.Write(hudBorderTop);
+        //        Console.SetCursorPosition(4, 19);
+        //        Console.WriteLine("│    " + enemy2.name + " health: " + enemy2.currentHealth + "/" + enemy2.maxHealth + "   │");
+        //        Console.SetCursorPosition(4, 20);
+        //        Console.Write(hudBorderBottom);
+        //    }
+        //    else if (enemy3.attackedLast == true)
+        //    {
+        //        Console.BackgroundColor = ConsoleColor.DarkMagenta;
+        //        Console.ForegroundColor = ConsoleColor.White;
+        //        Console.SetCursorPosition(4, 18);
+        //        Console.Write(hudBorderTop);
+        //        Console.SetCursorPosition(4, 19);
+        //        Console.WriteLine("│    " + enemy3.name + " health: " + enemy3.currentHealth + "/" + enemy3.maxHealth + "   │");
+        //        Console.SetCursorPosition(4, 20);
+        //        Console.Write(hudBorderBottom);
+        //    }
+        //}
 
         public void DisplayHUD(Player player, Enemy enemy, Enemy2 enemy2, Enemy3 enemy3)
         {
+
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(4, 15);
-            Console.Write(hudBorder);
+            Console.Write(hudBorderTop);
             Console.SetCursorPosition(4, 16);
-            Console.WriteLine("//    " + player.name + " health: " + player.currentHealth + "/" + player.maxHealth + "    //");
+            Console.WriteLine("│    " + player.name + " health: " + player.currentHealth + "/" + player.maxHealth + "    │");
             Console.SetCursorPosition(4, 17);
-            Console.Write(hudBorder);
+            Console.Write(hudBorderBottom);
 
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(4, 18);
-            Console.Write(hudBorder);
+            Console.Write(hudBorderTop);
             Console.SetCursorPosition(4, 19);
-            Console.WriteLine("//    " + enemy.name + " health: " + enemy.currentHealth + "/" + enemy.maxHealth + "   //");
+            Console.WriteLine("│    " + enemy.name + " health: " + enemy.currentHealth + "/" + enemy.maxHealth + "   │");
             Console.SetCursorPosition(4, 20);
-            Console.Write(hudBorder);
+            Console.Write(hudBorderBottom);
 
-            Console.BackgroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(4, 21);
-            Console.Write(hudBorder);
+            Console.Write(hudBorderTop);
             Console.SetCursorPosition(4, 22);
-            Console.WriteLine("//    " + enemy2.name + " health: " + enemy2.currentHealth + "/" + enemy2.maxHealth + "   //");
+            Console.WriteLine("│    " + enemy2.name + " health: " + enemy2.currentHealth + "/" + enemy2.maxHealth + "   │");
             Console.SetCursorPosition(4, 23);
-            Console.Write(hudBorder);
+            Console.Write(hudBorderBottom);
 
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(4, 24);
-            Console.Write(hudBorder);
+            Console.Write(hudBorderTop);
             Console.SetCursorPosition(4, 25);
-            Console.WriteLine("//    " + enemy3.name + " health: " + enemy3.currentHealth + "/" + enemy3.maxHealth + "   //");
+            Console.WriteLine("│    " + enemy3.name + " health: " + enemy3.currentHealth + "/" + enemy3.maxHealth + "   │");
             Console.SetCursorPosition(4, 26);
-            Console.Write(hudBorder);
+            Console.Write(hudBorderBottom);
             // -------------------------------------------------------------------------------------------------------------
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;

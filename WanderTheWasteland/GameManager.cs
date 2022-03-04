@@ -45,6 +45,7 @@ namespace WanderTheWasteland
                 enemy2.Draw();
                 enemy3.Draw();
                 hud.DisplayHUD(player1, enemy1, enemy2, enemy3);
+                //hud.DisplayModularHUD(player1, enemy1, enemy2, enemy3);
 
                 // PLAYER
                 if (player1.speedBuffed == true)

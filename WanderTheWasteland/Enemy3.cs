@@ -16,6 +16,7 @@ namespace WanderTheWasteland
             maxHealth = 3;
             attack = 1;
             name = "Enemy 3";
+            //attackedLast = false;
         }
 
         public void Draw()
