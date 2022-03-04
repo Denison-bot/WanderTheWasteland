@@ -12,7 +12,7 @@ namespace WanderTheWasteland
         {
             name = "HealthPack";
             itemIcon = "H";
-            posX = 1;
+            posX = 25;
             posY = 1;
         }
 

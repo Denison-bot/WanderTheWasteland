@@ -40,6 +40,10 @@ namespace WanderTheWasteland
         public void Heal(Player player)
         {
             player.currentHealth = player.currentHealth + 1;
+            if (player.currentHealth >= 3)
+            {
+                player.currentHealth = 3;
+            }
         }
 
         public void BuffAttack(Player player)

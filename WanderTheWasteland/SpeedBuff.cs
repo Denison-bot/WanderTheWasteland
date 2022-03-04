@@ -12,8 +12,8 @@ namespace WanderTheWasteland
         {
             name = "SpeedBuff";
             itemIcon = "S";
-            posX = 4;
-            posY = 2;
+            posX = 1;
+            posY = 12;
         }
 
         public void Draw()

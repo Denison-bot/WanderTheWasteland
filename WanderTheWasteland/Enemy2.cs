@@ -10,13 +10,13 @@ namespace WanderTheWasteland
     {
         private bool movingUp = true;
 
-        public void EnemyInit(int x, int y)
+        public void EnemyInit()
         {
-            intendedPosX = x;
-            intendedPosY = y;
+            intendedPosX = 17;
+            intendedPosY = 5;
             currentHealth = 3;
             maxHealth = 3;
-            attack = 3;
+            attack = 1;
             name = "Enemy 2";
         }
         public void Draw()
@@ -38,7 +38,7 @@ namespace WanderTheWasteland
             }
         }
 
-        public void Update(Map map, Enemy enemy, Enemy2 enemy2, Player player)
+        public void Update(Map map, Enemy enemy, Enemy2 enemy2, Enemy3 enemy3, Player player)
         {
             if (currentHealth > 0)
             {
@@ -50,7 +50,7 @@ namespace WanderTheWasteland
                         intendedPosY++;
                         movingUp = false;
                     }
-                    if (enemy.Attacking(player, enemy, enemy2) == true)
+                    if (enemy.Attacking(player, enemy, enemy2, enemy3) == true)
                     {
                         intendedPosY++;
                         player.TakeDamage(enemy, player);
@@ -64,9 +64,9 @@ namespace WanderTheWasteland
                         intendedPosY--;
                         movingUp = true;
                     }
-                    if (enemy.Attacking(player, enemy, enemy2) == true)
+                    if (enemy.Attacking(player, enemy, enemy2, enemy3) == true)
                     {
-                        intendedPosY++;
+                        intendedPosY--;
                         player.TakeDamage(enemy, player);
                         Console.Beep(150, 100);
                     }

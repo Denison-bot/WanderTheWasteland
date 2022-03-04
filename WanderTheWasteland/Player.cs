@@ -17,7 +17,7 @@ namespace WanderTheWasteland
         {
             intendedPosX = 8;
             intendedPosY = 2;
-            currentHealth = 1;
+            currentHealth = 3;
             maxHealth = 3;
             attack = 1;
             name = "Player";
@@ -44,7 +44,7 @@ namespace WanderTheWasteland
             }
         }
 
-        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy, Enemy2 enemy2, Item item, Item item2, Item item3)
+        public void Update(ref bool gameOver, Map map, Player player, Enemy enemy, Enemy2 enemy2, Enemy3 enemy3, Item item, Item item2, Item item3)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);
             input = readKeyInput.KeyChar;
@@ -59,17 +59,32 @@ namespace WanderTheWasteland
                         intendedPosY++;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy, enemy2) == true)
+                    if (player.Attacking(player, enemy, enemy2, enemy3) == true)
                     {
-                        intendedPosY++;
-                        enemy.TakeDamage(player, enemy);
-                        Console.Beep(200, 100);
+                        if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
+                        {
+                            intendedPosY++;
+                            enemy.TakeDamage(player, enemy);
+                            Console.Beep(200, 100);
+                        }
+                        else if (player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
+                        {
+                            intendedPosY++;
+                            enemy2.TakeDamage(player, enemy2);
+                            Console.Beep(200, 100);
+                        }
+                        else if (player.intendedPosX == enemy3.intendedPosX && player.intendedPosY == enemy3.intendedPosY)
+                        {
+                            intendedPosY++;
+                            enemy3.TakeDamage(player, enemy3);
+                            Console.Beep(200, 100);
+                        }
                     }
                     if (player.PickUpItem(player, item) == true)
                     {
                         item.UseItem(item, player);
                     }
-                    if (player.PickUpItem(player, item2) == true)
+                    if (player.PickUpItem(player, item2) == true) 
                     {
                         item2.UseItem(item2, player);
                     }
@@ -86,11 +101,26 @@ namespace WanderTheWasteland
                         intendedPosY--;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy, enemy2) == true)
+                    if (player.Attacking(player, enemy, enemy2, enemy3) == true)
                     {
-                        intendedPosY--;
-                        enemy.TakeDamage(player, enemy);
-                        Console.Beep(200, 100);
+                        if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
+                        {
+                            intendedPosY--;
+                            enemy.TakeDamage(player, enemy);
+                            Console.Beep(200, 100);
+                        }
+                        else if (player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
+                        {
+                            intendedPosY--;
+                            enemy2.TakeDamage(player, enemy2);
+                            Console.Beep(200, 100);
+                        }
+                        else if (player.intendedPosX == enemy3.intendedPosX && player.intendedPosY == enemy3.intendedPosY)
+                        {
+                            intendedPosY--;
+                            enemy3.TakeDamage(player, enemy3);
+                            Console.Beep(200, 100);
+                        }
                     }
                     if (player.PickUpItem(player, item) == true)
                     {
@@ -113,11 +143,26 @@ namespace WanderTheWasteland
                         intendedPosX++;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy, enemy2) == true)
+                    if (player.Attacking(player, enemy, enemy2, enemy3) == true)
                     {
-                        intendedPosX++;
-                        enemy.TakeDamage(player, enemy);
-                        Console.Beep(200, 100);
+                        if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
+                        {
+                            intendedPosX++;
+                            enemy.TakeDamage(player, enemy);
+                            Console.Beep(200, 100);
+                        }
+                        else if (player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
+                        {
+                            intendedPosX++;
+                            enemy2.TakeDamage(player, enemy2);
+                            Console.Beep(200, 100);
+                        }
+                        else if (player.intendedPosX == enemy3.intendedPosX && player.intendedPosY == enemy3.intendedPosY)
+                        {
+                            intendedPosX++;
+                            enemy3.TakeDamage(player, enemy3);
+                            Console.Beep(200, 100);
+                        }
                     }
                     if (player.PickUpItem(player, item) == true)
                     {
@@ -140,11 +185,26 @@ namespace WanderTheWasteland
                         intendedPosX--;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy, enemy2) == true)
+                    if (player.Attacking(player, enemy, enemy2, enemy3) == true)
                     {
-                        intendedPosX--;
-                        enemy.TakeDamage(player, enemy);
-                        Console.Beep(200, 100);
+                        if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
+                        {
+                            intendedPosX--;
+                            enemy.TakeDamage(player, enemy);
+                            Console.Beep(200, 100);
+                        }
+                        else if (player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
+                        {
+                            intendedPosX--;
+                            enemy2.TakeDamage(player, enemy2);
+                            Console.Beep(200, 100);
+                        }
+                        else if (player.intendedPosX == enemy3.intendedPosX && player.intendedPosY == enemy3.intendedPosY)
+                        {
+                            intendedPosX--;
+                            enemy3.TakeDamage(player, enemy3);
+                            Console.Beep(200, 100);
+                        }
                     }
                     if (player.PickUpItem(player, item) == true)
                     {
@@ -165,7 +225,7 @@ namespace WanderTheWasteland
                 }
             }
         }
-
+        
         public void QuitCheck(ref bool gameOver)
         {
             ConsoleKeyInfo readKeyInput = Console.ReadKey(true);

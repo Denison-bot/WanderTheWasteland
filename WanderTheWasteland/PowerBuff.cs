@@ -12,8 +12,8 @@ namespace WanderTheWasteland
         {
             name = "PowerBuff";
             itemIcon = "P";
-            posX = 1;
-            posY = 2;
+            posX = 38;
+            posY = 1;
         }
 
         public void Draw()

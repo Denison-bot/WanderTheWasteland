@@ -19,10 +19,11 @@ namespace WanderTheWasteland
         public int attack;
         
 
-        public bool Attacking(Player player, Enemy enemy, Enemy2 enemy2)
+        public bool Attacking(Player player, Enemy enemy, Enemy2 enemy2, Enemy3 enemy3)
         {
             if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY ||
-                player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
+                player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY ||
+                player.intendedPosX == enemy3.intendedPosX && player.intendedPosY == enemy3.intendedPosY)
             {
                 //intendedPosX = currentPosX;                
                 return true;
@@ -43,6 +44,10 @@ namespace WanderTheWasteland
             //Console.SetCursorPosition(50, 20);
             //Console.WriteLine(defending.health);
             //Console.WriteLine(attacking.health);
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+            }
         }
 
         public bool PickUpItem(Player player, Item item)
