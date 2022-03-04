@@ -8,6 +8,9 @@ namespace WanderTheWasteland
 {
     // ATTACKEDLAST BOOL DOES NOT RESET TO FALSE AFTER COMBAT HHHHHHHHHH 
 
+    // I attempted to get the HUD working, but I'm genuinely at a loss 
+    // I left the DisplayHUD active because it WORKS
+    // Enable DisplayModularHUD if you'd like to see, but the HUD will prioritize whatever comes first in the method
     class HUD
     {
         string hudBorderTop = "┌──────────────────────────┐";
