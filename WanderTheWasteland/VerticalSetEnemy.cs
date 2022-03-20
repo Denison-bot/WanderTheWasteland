@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WanderTheWasteland
 {
-    class Enemy2 : GameCharacter
+    class VerticalSetEnemy : GameCharacter
     {
         private bool movingUp = true;
 
@@ -17,7 +17,7 @@ namespace WanderTheWasteland
             currentHealth = 3;
             maxHealth = 3;
             attack = 5;
-            name = "Enemy 2";
+            name = "Vertical Enemy";
             //attackedLast = false;
         }
         public void Draw()
@@ -39,7 +39,7 @@ namespace WanderTheWasteland
             }
         }
 
-        public void Update(Map map, Enemy enemy, Enemy2 enemy2, Enemy3 enemy3, Player player)
+        public void Update(Map map, RandomMoveEnemy enemy, VerticalSetEnemy enemy2, TrackingEnemy enemy3, Player player)
         {
             if (currentHealth > 0)
             {

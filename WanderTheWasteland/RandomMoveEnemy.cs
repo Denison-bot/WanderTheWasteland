@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 namespace WanderTheWasteland
 {
     
-    class Enemy : GameCharacter
+    class RandomMoveEnemy : GameCharacter
     {
         private const int up = 1;
         private const int down = 2;
         private const int left = 3;
         private const int right = 4;
 
-        public void EnemyInit()
+        public void Init()
         {
             intendedPosX = 25;
             intendedPosY = 2;
             currentHealth = 5;
             maxHealth = 5;
             attack = 1;
-            name = "Enemy 1";
+            name = "Random Enemy";
             //attackedLast = false;
         }
         public void Draw()
@@ -42,7 +42,7 @@ namespace WanderTheWasteland
                 }
             }
         }
-        public void Update(Map map, Enemy enemy, Enemy2 enemy2, Enemy3 enemy3, Player player)
+        public void Update(Map map, RandomMoveEnemy enemy, VerticalSetEnemy enemy2, TrackingEnemy enemy3, Player player)
         {
 
             Random rnd = new Random();

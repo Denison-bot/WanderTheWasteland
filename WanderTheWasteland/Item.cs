@@ -13,7 +13,7 @@ namespace WanderTheWasteland
         public string name;
         public string itemIcon;
 
-        public void UseItem(Item item, Player player)
+        public void UseItem(Item item, Player player, HUD hud)
         {
             if (name == "HealthPack")
             {
@@ -21,6 +21,7 @@ namespace WanderTheWasteland
                 itemIcon = "";
                 posX = 0;
                 posY = 0;
+                hud.action = "Player Healed";
             }
             else if (name == "PowerBuff")
             {
