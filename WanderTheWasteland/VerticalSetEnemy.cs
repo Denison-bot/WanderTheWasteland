@@ -20,7 +20,7 @@ namespace WanderTheWasteland
             name = "Vertical Enemy";
             //attackedLast = false;
         }
-        public void Draw()
+        public void Draw(HUD hud)
         {
             currentPosX = intendedPosX;
             currentPosY = intendedPosY;
@@ -31,7 +31,7 @@ namespace WanderTheWasteland
 
             if (currentHealth <= 0)
             {
-                PrintCorpse();
+                PrintCorpse(hud);
                 if (currentHealth < 0)
                 {
                     currentHealth = 0;
@@ -39,7 +39,7 @@ namespace WanderTheWasteland
             }
         }
 
-        public void Update(Map map, RandomMoveEnemy enemy, VerticalSetEnemy enemy2, TrackingEnemy enemy3, Player player)
+        public void Update(Map map, RandomMoveEnemy enemy, VerticalSetEnemy enemy2, TrackingEnemy enemy3, Player player, HUD hud)
         {
             if (currentHealth > 0)
             {
@@ -51,10 +51,10 @@ namespace WanderTheWasteland
                         intendedPosY++;
                         movingUp = false;
                     }
-                    if (enemy.Attacking(player, enemy, enemy2, enemy3) == true)
+                    if (enemy.Attacking(player, enemy, enemy2, enemy3, hud) == true)
                     {
                         intendedPosY++;
-                        player.TakeDamage(enemy, player);
+                        player.TakeDamage(enemy, player, hud);
                         Console.Beep(150, 100);
                     }
                 }
@@ -65,10 +65,10 @@ namespace WanderTheWasteland
                         intendedPosY--;
                         movingUp = true;
                     }
-                    if (enemy.Attacking(player, enemy, enemy2, enemy3) == true)
+                    if (enemy.Attacking(player, enemy, enemy2, enemy3, hud) == true)
                     {
                         intendedPosY--;
-                        player.TakeDamage(enemy, player);
+                        player.TakeDamage(enemy, player, hud);
                         Console.Beep(150, 100);
                     }
                 }        

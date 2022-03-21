@@ -42,8 +42,8 @@ namespace WanderTheWasteland
                 powerBuff1.Draw();
                 speedBuff1.Draw();
                 enemy1.Draw(hud);
-                enemy2.Draw();
-                enemy3.Draw();
+                enemy2.Draw(hud);
+                enemy3.Draw(hud);
                 hud.DisplayBorder();
                 hud.DisplayHUD(player1, enemy1, enemy2, enemy3);
                 //hud.DisplayModularHUD(player1, enemy1, enemy2, enemy3);
@@ -61,8 +61,8 @@ namespace WanderTheWasteland
                         speedBuff1.Draw();
                         player1.Draw(hud);
                         enemy1.Draw(hud);
-                        enemy2.Draw();
-                        enemy3.Draw();
+                        enemy2.Draw(hud);
+                        enemy3.Draw(hud);
                     }
                 }
 
@@ -72,8 +72,8 @@ namespace WanderTheWasteland
                 player1.Update(ref gameOver, map, player1, enemy1, enemy2, enemy3, healthPack1, powerBuff1, speedBuff1, hud);
                 map.Update();
                 enemy1.Update(map, enemy1, enemy2, enemy3, player1, hud);
-                enemy2.Update(map, enemy1, enemy2, enemy3, player1);
-                enemy3.Update(map, enemy1, enemy2, enemy3, player1);
+                enemy2.Update(map, enemy1, enemy2, enemy3, player1, hud);
+                enemy3.Update(map, enemy1, enemy2, enemy3, player1, hud);
             }
         }
     }

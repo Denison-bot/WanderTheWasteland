@@ -18,6 +18,7 @@ namespace WanderTheWasteland
         string colorHUDTop = "┌────────────────────────────┐";
         string colorHUDBottom = "└────────────────────────────┘";
         public string action = "";
+        
         int actionLength;
         int hudLength;
         
@@ -55,6 +56,23 @@ namespace WanderTheWasteland
                 Console.WriteLine();
             }
         }
+
+        //public void DisplayModularHUD(Player player)
+        //{
+
+        //    // PLAYER STATS
+        //    Console.BackgroundColor = ConsoleColor.DarkBlue;
+        //    Console.ForegroundColor = ConsoleColor.White;
+        //    Console.SetCursorPosition(4, 15);
+        //    Console.Write(hudBorderTop);
+        //    Console.SetCursorPosition(4, 16);
+        //    Console.WriteLine("│    " + player.name + " health: " + player.currentHealth + "/" + player.maxHealth + "    │");
+        //    Console.SetCursorPosition(4, 17);
+        //    Console.Write(hudBorderBottom);
+        //    // ENEMY STATS
+
+        //}
+
         public void DisplayHUD(Player player, RandomMoveEnemy randomMoveEnemy, VerticalSetEnemy verticalSetEnemy, TrackingEnemy trackingEnemy)
         {
 

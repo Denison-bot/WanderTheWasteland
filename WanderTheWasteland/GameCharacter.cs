@@ -34,13 +34,14 @@ namespace WanderTheWasteland
         {
             Console.SetCursorPosition(currentPosX, currentPosY);
             Console.Write("X");
-            hud.action = name + "DIED";
+            hud.action = name + " DIED";
         }
 
-        public void TakeDamage(GameCharacter attacking, GameCharacter defending)
+        public void TakeDamage(GameCharacter attacking, GameCharacter defending, HUD hud)
         {
             //attackedLast = true;
             defending.currentHealth = defending.currentHealth - attacking.attack;
+            hud.action = defending.name + " takes " + attacking.attack + " damage!";
             //Console.SetCursorPosition(50, 20);
             //Console.WriteLine(defending.health);
             //Console.WriteLine(attacking.health);

@@ -42,7 +42,7 @@ namespace WanderTheWasteland
                 }
             }
         }
-        public void Update(Map map, RandomMoveEnemy enemy, VerticalSetEnemy enemy2, TrackingEnemy enemy3, Player player, HUD hud)
+        public void Update(Map map, RandomMoveEnemy randomMoveEnemy, VerticalSetEnemy verticalSetEnemy, TrackingEnemy trackingEnemy, Player player, HUD hud)
         {
 
             Random rnd = new Random();
@@ -57,10 +57,10 @@ namespace WanderTheWasteland
                     {
                         intendedPosY++;
                     }
-                    if (enemy.Attacking(player, enemy, enemy2, enemy3, hud) == true)
+                    if (randomMoveEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
                     {
                         intendedPosY++;
-                        player.TakeDamage(enemy, player);
+                        player.TakeDamage(randomMoveEnemy, player, hud);
                         Console.Beep(150, 100);
                     }
                 }
@@ -71,10 +71,10 @@ namespace WanderTheWasteland
                     {
                         intendedPosY--;
                     }
-                    if (enemy.Attacking(player, enemy, enemy2, enemy3) == true)
+                    if (randomMoveEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
                     {
                         intendedPosY--;
-                        player.TakeDamage(enemy, player);
+                        player.TakeDamage(randomMoveEnemy, player, hud);
                         Console.Beep(150, 100);
                     }
                 }
@@ -85,10 +85,10 @@ namespace WanderTheWasteland
                     {
                         intendedPosX++;
                     }
-                    if (enemy.Attacking(player, enemy, enemy2, enemy3) == true)
+                    if (randomMoveEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
                     {
                         intendedPosX++;
-                        player.TakeDamage(enemy, player);
+                        player.TakeDamage(randomMoveEnemy, player, hud);
                         Console.Beep(150, 100);
                     }
                 }
@@ -99,10 +99,10 @@ namespace WanderTheWasteland
                     {
                         intendedPosX--;
                     }
-                    if (enemy.Attacking(player, enemy, enemy2, enemy3) == true)
+                    if (randomMoveEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
                     {
                         intendedPosX--;
-                        player.TakeDamage(enemy, player);
+                        player.TakeDamage(randomMoveEnemy, player, hud);
                         Console.Beep(150, 100);
                     }
                 }

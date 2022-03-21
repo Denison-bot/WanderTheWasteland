@@ -64,19 +64,19 @@ namespace WanderTheWasteland
                         if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
                         {
                             intendedPosY++;
-                            enemy.TakeDamage(player, enemy);
+                            enemy.TakeDamage(player, enemy, hud);
                             Console.Beep(200, 100);
                         }
                         else if (player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
                         {
                             intendedPosY++;
-                            enemy2.TakeDamage(player, enemy2);
+                            enemy2.TakeDamage(player, enemy2, hud);
                             Console.Beep(200, 100);
                         }
                         else if (player.intendedPosX == enemy3.intendedPosX && player.intendedPosY == enemy3.intendedPosY)
                         {
                             intendedPosY++;
-                            enemy3.TakeDamage(player, enemy3);
+                            enemy3.TakeDamage(player, enemy3, hud);
                             Console.Beep(200, 100);
                         }
                     }
@@ -106,19 +106,19 @@ namespace WanderTheWasteland
                         if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
                         {
                             intendedPosY--;
-                            enemy.TakeDamage(player, enemy);
+                            enemy.TakeDamage(player, enemy, hud);
                             Console.Beep(200, 100);
                         }
                         else if (player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
                         {
                             intendedPosY--;
-                            enemy2.TakeDamage(player, enemy2);
+                            enemy2.TakeDamage(player, enemy2, hud);
                             Console.Beep(200, 100);
                         }
                         else if (player.intendedPosX == enemy3.intendedPosX && player.intendedPosY == enemy3.intendedPosY)
                         {
                             intendedPosY--;
-                            enemy3.TakeDamage(player, enemy3);
+                            enemy3.TakeDamage(player, enemy3, hud);
                             Console.Beep(200, 100);
                         }
                     }
@@ -148,19 +148,19 @@ namespace WanderTheWasteland
                         if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
                         {
                             intendedPosX++;
-                            enemy.TakeDamage(player, enemy);
+                            enemy.TakeDamage(player, enemy, hud);
                             Console.Beep(200, 100);
                         }
                         else if (player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
                         {
                             intendedPosX++;
-                            enemy2.TakeDamage(player, enemy2);
+                            enemy2.TakeDamage(player, enemy2, hud);
                             Console.Beep(200, 100);
                         }
                         else if (player.intendedPosX == enemy3.intendedPosX && player.intendedPosY == enemy3.intendedPosY)
                         {
                             intendedPosX++;
-                            enemy3.TakeDamage(player, enemy3);
+                            enemy3.TakeDamage(player, enemy3, hud);
                             Console.Beep(200, 100);
                         }
                     }
@@ -190,19 +190,19 @@ namespace WanderTheWasteland
                         if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
                         {
                             intendedPosX--;
-                            enemy.TakeDamage(player, enemy);
+                            enemy.TakeDamage(player, enemy, hud);
                             Console.Beep(200, 100);
                         }
                         else if (player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY)
                         {
                             intendedPosX--;
-                            enemy2.TakeDamage(player, enemy2);
+                            enemy2.TakeDamage(player, enemy2, hud);
                             Console.Beep(200, 100);
                         }
                         else if (player.intendedPosX == enemy3.intendedPosX && player.intendedPosY == enemy3.intendedPosY)
                         {
                             intendedPosX--;
-                            enemy3.TakeDamage(player, enemy3);
+                            enemy3.TakeDamage(player, enemy3, hud);
                             Console.Beep(200, 100);
                         }
                     }

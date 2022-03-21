@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnemyManager.cs" />
     <Compile Include="VerticalSetEnemy.cs" />
     <Compile Include="TrackingEnemy.cs" />
     <Compile Include="PowerBuff.cs" />
