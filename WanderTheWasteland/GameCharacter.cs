@@ -18,7 +18,7 @@ namespace WanderTheWasteland
         public int attack;
         //public bool attackedLast;
 
-        public bool Attacking(Player player, RandomMoveEnemy enemy, VerticalSetEnemy enemy2, TrackingEnemy enemy3)
+        public bool Attacking(Player player, RandomMoveEnemy enemy, VerticalSetEnemy enemy2, TrackingEnemy enemy3, HUD hud)
         {
             if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY ||
                 player.intendedPosX == enemy2.intendedPosX && player.intendedPosY == enemy2.intendedPosY ||
@@ -30,11 +30,11 @@ namespace WanderTheWasteland
             return false;
         }
 
-        public void PrintCorpse()
+        public void PrintCorpse(HUD hud)
         {
             Console.SetCursorPosition(currentPosX, currentPosY);
             Console.Write("X");
-            
+            hud.action = name + "DIED";
         }
 
         public void TakeDamage(GameCharacter attacking, GameCharacter defending)

@@ -29,6 +29,7 @@ namespace WanderTheWasteland
                 itemIcon = "";
                 posX = 0;
                 posY = 0;
+                hud.action = "Player Attack Buffed";
             }
             else if (name == "SpeedBuff")
             {
@@ -36,6 +37,7 @@ namespace WanderTheWasteland
                 itemIcon = "";
                 posX = 0;
                 posY = 0;
+                hud.action = "Player Speed Buffed";
             }
         }
         public void Heal(Player player)

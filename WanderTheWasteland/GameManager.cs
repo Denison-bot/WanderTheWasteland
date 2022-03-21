@@ -41,7 +41,7 @@ namespace WanderTheWasteland
                 healthPack1.Draw();
                 powerBuff1.Draw();
                 speedBuff1.Draw();
-                enemy1.Draw();
+                enemy1.Draw(hud);
                 enemy2.Draw();
                 enemy3.Draw();
                 hud.DisplayBorder();
@@ -53,14 +53,14 @@ namespace WanderTheWasteland
                 {
                     for (int i = 0; i < player1.speedBoost; i++)
                     {
-                        player1.Draw();
+                        player1.Draw(hud);
                         player1.Update(ref gameOver, map, player1, enemy1, enemy2, enemy3, healthPack1, powerBuff1, speedBuff1, hud);
                         map.DrawFromFile();
                         healthPack1.Draw();
                         powerBuff1.Draw();
                         speedBuff1.Draw();
-                        player1.Draw();
-                        enemy1.Draw();
+                        player1.Draw(hud);
+                        enemy1.Draw(hud);
                         enemy2.Draw();
                         enemy3.Draw();
                     }
@@ -68,10 +68,10 @@ namespace WanderTheWasteland
 
                 // UPDATES
                 else
-                player1.Draw();
+                player1.Draw(hud);
                 player1.Update(ref gameOver, map, player1, enemy1, enemy2, enemy3, healthPack1, powerBuff1, speedBuff1, hud);
                 map.Update();
-                enemy1.Update(map, enemy1, enemy2, enemy3, player1);
+                enemy1.Update(map, enemy1, enemy2, enemy3, player1, hud);
                 enemy2.Update(map, enemy1, enemy2, enemy3, player1);
                 enemy3.Update(map, enemy1, enemy2, enemy3, player1);
             }

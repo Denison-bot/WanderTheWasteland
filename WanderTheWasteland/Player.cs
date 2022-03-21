@@ -24,7 +24,7 @@ namespace WanderTheWasteland
             speedBoost = 1;
         }
 
-        public void Draw()
+        public void Draw(HUD hud)
         {
             //Console.Clear();
             currentPosX = intendedPosX;
@@ -36,7 +36,7 @@ namespace WanderTheWasteland
 
             if (currentHealth <= 0)
             {
-                PrintCorpse();
+                PrintCorpse(hud);
                 if (currentHealth < 0)
                 {
                     currentHealth = 0;
@@ -59,7 +59,7 @@ namespace WanderTheWasteland
                         intendedPosY++;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy, enemy2, enemy3) == true)
+                    if (player.Attacking(player, enemy, enemy2, enemy3, hud) == true)
                     {
                         if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
                         {
@@ -101,7 +101,7 @@ namespace WanderTheWasteland
                         intendedPosY--;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy, enemy2, enemy3) == true)
+                    if (player.Attacking(player, enemy, enemy2, enemy3, hud) == true)
                     {
                         if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
                         {
@@ -143,7 +143,7 @@ namespace WanderTheWasteland
                         intendedPosX++;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy, enemy2, enemy3) == true)
+                    if (player.Attacking(player, enemy, enemy2, enemy3, hud) == true)
                     {
                         if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
                         {
@@ -185,7 +185,7 @@ namespace WanderTheWasteland
                         intendedPosX--;
                         Console.Beep(100, 50);
                     }
-                    if (player.Attacking(player, enemy, enemy2, enemy3) == true)
+                    if (player.Attacking(player, enemy, enemy2, enemy3, hud) == true)
                     {
                         if (player.intendedPosX == enemy.intendedPosX && player.intendedPosY == enemy.intendedPosY)
                         {
