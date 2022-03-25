@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WanderTheWasteland
 {
-    class TrackingEnemy : GameCharacter
+    class TrackingEnemy : EnemyParent
     {
-        public void EnemyInit()
+        public TrackingEnemy()
         {
             intendedPosX = 36;
             intendedPosY = 2;
@@ -16,7 +16,6 @@ namespace WanderTheWasteland
             maxHealth = 3;
             attack = 1;
             name = "Tracking Enemy";
-            //attackedLast = false;
         }
 
         public void Draw(HUD hud)

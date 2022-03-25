@@ -8,7 +8,7 @@ namespace WanderTheWasteland
 {
     class Health : Item
     {
-        public void InitHealth()
+        public Health()
         {
             name = "HealthPack";
             itemIcon = "H";

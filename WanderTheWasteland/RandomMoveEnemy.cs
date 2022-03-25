@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace WanderTheWasteland
 {
     
-    class RandomMoveEnemy : GameCharacter
+    class RandomMoveEnemy : EnemyParent
     {
         private const int up = 1;
         private const int down = 2;
         private const int left = 3;
         private const int right = 4;
 
-        public void Init()
+        public RandomMoveEnemy()
         {
             intendedPosX = 25;
             intendedPosY = 2;
@@ -22,8 +22,8 @@ namespace WanderTheWasteland
             maxHealth = 5;
             attack = 1;
             name = "Random Enemy";
-            //attackedLast = false;
         }
+
         public void Draw(HUD hud)
         {
             currentPosX = intendedPosX;

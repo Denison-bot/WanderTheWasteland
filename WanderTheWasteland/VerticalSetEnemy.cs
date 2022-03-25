@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WanderTheWasteland
 {
-    class VerticalSetEnemy : GameCharacter
+    class VerticalSetEnemy : EnemyParent
     {
         private bool movingUp = true;
 
-        public void EnemyInit()
+        public VerticalSetEnemy()
         {
             intendedPosX = 17;
             intendedPosY = 5;
@@ -18,8 +18,8 @@ namespace WanderTheWasteland
             maxHealth = 3;
             attack = 5;
             name = "Vertical Enemy";
-            //attackedLast = false;
         }
+
         public void Draw(HUD hud)
         {
             currentPosX = intendedPosX;

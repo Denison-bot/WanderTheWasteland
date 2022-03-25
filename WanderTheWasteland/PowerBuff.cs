@@ -8,13 +8,14 @@ namespace WanderTheWasteland
 {
     class PowerBuff : Item
     {
-        public void InitPowerBuff()
+        public PowerBuff()
         {
             name = "PowerBuff";
             itemIcon = "P";
             posX = 38;
             posY = 1;
         }
+
 
         public void Draw()
         {

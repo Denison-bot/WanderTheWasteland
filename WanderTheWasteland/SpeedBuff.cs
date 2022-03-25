@@ -8,13 +8,14 @@ namespace WanderTheWasteland
 {
     class SpeedBuff : Item
     {
-        public void InitSpeedBuff()
+        public SpeedBuff()
         {
             name = "SpeedBuff";
             itemIcon = "S";
             posX = 1;
             posY = 12;
         }
+
 
         public void Draw()
         {

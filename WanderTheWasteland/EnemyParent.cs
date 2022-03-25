@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WanderTheWasteland
 {
-    class EnemyManager : EnemyParent
+    class EnemyParent : GameCharacter
     {
 
     }

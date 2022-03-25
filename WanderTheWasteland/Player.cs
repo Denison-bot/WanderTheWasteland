@@ -12,8 +12,7 @@ namespace WanderTheWasteland
         public bool speedBuffed = false;
         public int speedBoost;
 
-        
-        public void Init()
+        public Player()
         {
             intendedPosX = 8;
             intendedPosY = 2;
@@ -23,6 +22,17 @@ namespace WanderTheWasteland
             name = "Player";
             speedBoost = 1;
         }
+
+        //public void Init()
+        //{
+        //    intendedPosX = 8;
+        //    intendedPosY = 2;
+        //    currentHealth = 3;
+        //    maxHealth = 3;
+        //    attack = 1;
+        //    name = "Player";
+        //    speedBoost = 1;
+        //}
 
         public void Draw(HUD hud)
         {

@@ -15,22 +15,14 @@ namespace WanderTheWasteland
         static Health healthPack1 = new Health();
         static PowerBuff powerBuff1 = new PowerBuff();
         static SpeedBuff speedBuff1 = new SpeedBuff();
-        static RandomMoveEnemy enemy1 = new RandomMoveEnemy();
-        static VerticalSetEnemy enemy2 = new VerticalSetEnemy();
-        static TrackingEnemy enemy3 = new TrackingEnemy();
+        static RandomMoveEnemy randomMoveEnemy = new RandomMoveEnemy();
+        static VerticalSetEnemy verticleEnemy = new VerticalSetEnemy();
+        static TrackingEnemy trackingEnemy = new TrackingEnemy();
 
         static bool gameOver = false;
 
         public void RunGame()
         {
-            player1.Init();
-            enemy1.Init();
-            enemy2.EnemyInit();
-            enemy3.EnemyInit();
-            healthPack1.InitHealth();
-            powerBuff1.InitPowerBuff();
-            speedBuff1.InitSpeedBuff();
-            
             // hide cursor
             Console.CursorVisible = false;
             
@@ -41,39 +33,39 @@ namespace WanderTheWasteland
                 healthPack1.Draw();
                 powerBuff1.Draw();
                 speedBuff1.Draw();
-                enemy1.Draw(hud);
-                enemy2.Draw(hud);
-                enemy3.Draw(hud);
+                randomMoveEnemy.Draw(hud);
+                verticleEnemy.Draw(hud);
+                trackingEnemy.Draw(hud);
                 hud.DisplayBorder();
-                hud.DisplayHUD(player1, enemy1, enemy2, enemy3);
+                hud.DisplayHUD(player1, randomMoveEnemy, verticleEnemy, trackingEnemy);
                 //hud.DisplayModularHUD(player1, enemy1, enemy2, enemy3);
 
-                // PLAYER
+                // PLAYER (if speed buffed)
                 if (player1.speedBuffed == true)
                 {
                     for (int i = 0; i < player1.speedBoost; i++)
                     {
                         player1.Draw(hud);
-                        player1.Update(ref gameOver, map, player1, enemy1, enemy2, enemy3, healthPack1, powerBuff1, speedBuff1, hud);
+                        player1.Update(ref gameOver, map, player1, randomMoveEnemy, verticleEnemy, trackingEnemy, healthPack1, powerBuff1, speedBuff1, hud);
                         map.DrawFromFile();
                         healthPack1.Draw();
                         powerBuff1.Draw();
                         speedBuff1.Draw();
                         player1.Draw(hud);
-                        enemy1.Draw(hud);
-                        enemy2.Draw(hud);
-                        enemy3.Draw(hud);
+                        randomMoveEnemy.Draw(hud);
+                        verticleEnemy.Draw(hud);
+                        trackingEnemy.Draw(hud);
                     }
                 }
 
                 // UPDATES
                 else
                 player1.Draw(hud);
-                player1.Update(ref gameOver, map, player1, enemy1, enemy2, enemy3, healthPack1, powerBuff1, speedBuff1, hud);
+                player1.Update(ref gameOver, map, player1, randomMoveEnemy, verticleEnemy, trackingEnemy, healthPack1, powerBuff1, speedBuff1, hud);
                 map.Update();
-                enemy1.Update(map, enemy1, enemy2, enemy3, player1, hud);
-                enemy2.Update(map, enemy1, enemy2, enemy3, player1, hud);
-                enemy3.Update(map, enemy1, enemy2, enemy3, player1, hud);
+                randomMoveEnemy.Update(map, randomMoveEnemy, verticleEnemy, trackingEnemy, player1, hud);
+                verticleEnemy.Update(map, randomMoveEnemy, verticleEnemy, trackingEnemy, player1, hud);
+                trackingEnemy.Update(map, randomMoveEnemy, verticleEnemy, trackingEnemy, player1, hud);
             }
         }
     }
