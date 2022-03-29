@@ -9,10 +9,10 @@ namespace WanderTheWasteland
     
     class RandomMoveEnemy : EnemyParent
     {
-        private const int up = 1;
-        private const int down = 2;
-        private const int left = 3;
-        private const int right = 4;
+        //private const int up = 1;
+        //private const int down = 2;
+        //private const int left = 3;
+        //private const int right = 4;
 
         public RandomMoveEnemy()
         {
@@ -24,24 +24,6 @@ namespace WanderTheWasteland
             name = "Random Enemy";
         }
 
-        public void Draw(HUD hud)
-        {
-            currentPosX = intendedPosX;
-            currentPosY = intendedPosY;
-
-            Console.SetCursorPosition(currentPosX, currentPosY);
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.Write("■");
-
-            if (currentHealth <= 0)
-            {
-                PrintCorpse(hud);
-                if (currentHealth < 0)
-                {
-                    currentHealth = 0;
-                }
-            }
-        }
         public void Update(Map map, RandomMoveEnemy randomMoveEnemy, VerticalSetEnemy verticalSetEnemy, TrackingEnemy trackingEnemy, Player player, HUD hud)
         {
 

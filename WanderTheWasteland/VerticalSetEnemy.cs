@@ -20,25 +20,6 @@ namespace WanderTheWasteland
             name = "Vertical Enemy";
         }
 
-        public void Draw(HUD hud)
-        {
-            currentPosX = intendedPosX;
-            currentPosY = intendedPosY;
-
-            Console.SetCursorPosition(currentPosX, currentPosY);
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.Write("■");
-
-            if (currentHealth <= 0)
-            {
-                PrintCorpse(hud);
-                if (currentHealth < 0)
-                {
-                    currentHealth = 0;
-                }
-            }
-        }
-
         public void Update(Map map, RandomMoveEnemy enemy, VerticalSetEnemy enemy2, TrackingEnemy enemy3, Player player, HUD hud)
         {
             if (currentHealth > 0)
