@@ -13,6 +13,8 @@ namespace WanderTheWasteland
         private const int left = 3;
         private const int right = 4;
 
+        bool movingUp = true;
+
         public void Draw(HUD hud)
         {
             currentPosX = intendedPosX;
@@ -114,7 +116,102 @@ namespace WanderTheWasteland
             //--------------------------------------------------------
             if (name == "Vertical Enemy")
             {
-
+                if (currentHealth > 0)
+                {                    
+                    if (movingUp == true)
+                    {
+                        intendedPosY--;
+                        if (map.IsWall(intendedPosX, intendedPosY) == true)
+                        {
+                            intendedPosY++;
+                            movingUp = false;
+                        }
+                        if (verticalSetEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
+                        {
+                            intendedPosY++;
+                            player.TakeDamage(verticalSetEnemy, player, hud);
+                            Console.Beep(150, 100);
+                        }
+                    }
+                    else if (movingUp == false)
+                    {
+                        intendedPosY++;
+                        if (map.IsWall(intendedPosX, intendedPosY) == true)
+                        {
+                            intendedPosY--;
+                            movingUp = true;
+                        }
+                        if (verticalSetEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
+                        {
+                            intendedPosY--;
+                            player.TakeDamage(verticalSetEnemy, player, hud);
+                            Console.Beep(150, 100);
+                        }
+                    }
+                }
+            }
+            //--------------------------------------------------------
+            if (name == "Tracking Enemy")
+            {
+                if (currentHealth > 0)
+                {
+                    if (player.intendedPosY > currentPosY)
+                    {
+                        intendedPosY++;
+                        if (map.IsWall(intendedPosX, intendedPosY) == true)
+                        {
+                            intendedPosY--;
+                        }
+                        if (Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
+                        {
+                            intendedPosY--;
+                            player.TakeDamage(trackingEnemy, player, hud);
+                            Console.Beep(150, 100);
+                        }
+                    }
+                    else if (player.intendedPosY < currentPosY)
+                    {
+                        intendedPosY--;
+                        if (map.IsWall(intendedPosX, intendedPosY) == true)
+                        {
+                            intendedPosY++;
+                        }
+                        if (Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
+                        {
+                            intendedPosY++;
+                            player.TakeDamage(trackingEnemy, player, hud);
+                            Console.Beep(150, 100);
+                        }
+                    }
+                    if (player.intendedPosX > currentPosX)
+                    {
+                        intendedPosX++;
+                        if (map.IsWall(intendedPosX, intendedPosY) == true)
+                        {
+                            intendedPosX--;
+                        }
+                        if (Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
+                        {
+                            intendedPosX--;
+                            player.TakeDamage(trackingEnemy, player, hud);
+                            Console.Beep(150, 100);
+                        }
+                    }
+                    else if (player.intendedPosX < currentPosX)
+                    {
+                        intendedPosX--;
+                        if (map.IsWall(intendedPosX, intendedPosY) == true)
+                        {
+                            intendedPosX++;
+                        }
+                        if (Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
+                        {
+                            intendedPosX++;
+                            player.TakeDamage(trackingEnemy, player, hud);
+                            Console.Beep(150, 100);
+                        }
+                    }
+                }
             }
         }
     }

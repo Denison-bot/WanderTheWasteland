@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace WanderTheWasteland
 {
-    
+
     class RandomMoveEnemy : EnemyParent
     {
-        //private const int up = 1;
-        //private const int down = 2;
-        //private const int left = 3;
-        //private const int right = 4;
-
         public RandomMoveEnemy()
         {
             intendedPosX = 25;
@@ -23,94 +18,5 @@ namespace WanderTheWasteland
             attack = 1;
             name = "Random Enemy";
         }
-
-        public void Update(Map map, RandomMoveEnemy randomMoveEnemy, VerticalSetEnemy verticalSetEnemy, TrackingEnemy trackingEnemy, Player player, HUD hud)
-        {
-
-            Random rnd = new Random();
-            int nextMove = rnd.Next(1, 5);
-
-            if (currentHealth > 0)
-            {
-                if (nextMove == up)
-                {
-                    intendedPosY--;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosY++;
-                    }
-                    if (randomMoveEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
-                    {
-                        intendedPosY++;
-                        player.TakeDamage(randomMoveEnemy, player, hud);
-                        Console.Beep(150, 100);
-                    }
-                }
-                else if (nextMove == down)
-                {
-                    intendedPosY++;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosY--;
-                    }
-                    if (randomMoveEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
-                    {
-                        intendedPosY--;
-                        player.TakeDamage(randomMoveEnemy, player, hud);
-                        Console.Beep(150, 100);
-                    }
-                }
-                else if (nextMove == left)
-                {
-                    intendedPosX--;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosX++;
-                    }
-                    if (randomMoveEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
-                    {
-                        intendedPosX++;
-                        player.TakeDamage(randomMoveEnemy, player, hud);
-                        Console.Beep(150, 100);
-                    }
-                }
-                else if (nextMove == right)
-                {
-                    intendedPosX++;
-                    if (map.IsWall(intendedPosX, intendedPosY) == true)
-                    {
-                        intendedPosX--;
-                    }
-                    if (randomMoveEnemy.Attacking(player, randomMoveEnemy, verticalSetEnemy, trackingEnemy, hud) == true)
-                    {
-                        intendedPosX--;
-                        player.TakeDamage(randomMoveEnemy, player, hud);
-                        Console.Beep(150, 100);
-                    }
-                }
-            }
-        }
     }
 }
-//    attempt at tracking player
-
-//    // check right
-//    if (player.currentPosX == enemy.currentPosX + 1 && player.currentPosY == enemy.currentPosY)
-//    {
-//        player.TakeDamage(enemy, player);
-//    }
-//    // check left
-//    else if (player.currentPosX == enemy.currentPosX - 1 && player.currentPosY == enemy.currentPosY)
-//    {
-//        player.TakeDamage(enemy, player);
-//    }
-//    // check down
-//    else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY + 1)
-//    {
-//        player.TakeDamage(enemy, player);
-//    }
-//    // check up
-//    else if (player.currentPosX == enemy.currentPosX && player.currentPosY == enemy.currentPosY - 1)
-//    {
-//        player.TakeDamage(enemy, player);
-//    }
